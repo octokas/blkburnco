@@ -12,9 +12,9 @@ function initForms () {
     const self = this;
 
     // Validate Forms
-    $('form:not(.nk-form-ajax):not(.nk-mchimp):not(.ready)').addClass('ready').each(function () {
+    $('form:not(.blk-form-ajax):not(.blk-mchimp):not(.ready)').addClass('ready').each(function () {
         $(this).validate({
-            errorClass: 'nk-error',
+            errorClass: 'blk-error',
             errorElement: 'div',
             errorPlacement (error, element) {
                 let $parent = element.parent('.input-group');
@@ -28,9 +28,9 @@ function initForms () {
         });
     });
     // ajax form
-    $('form.nk-form-ajax:not(.ready)').addClass('ready').each(function () {
+    $('form.blk-form-ajax:not(.ready)').addClass('ready').each(function () {
         $(this).validate({
-            errorClass: 'nk-error',
+            errorClass: 'blk-error',
             errorElement: 'div',
             errorPlacement (error, element) {
                 let $parent = element.parent('.input-group');
@@ -43,8 +43,8 @@ function initForms () {
             },
             // Submit the form via ajax (see: jQuery Form plugin)
             submitHandler (form) {
-                let $responseSuccess = $(form).find('.nk-form-response-success');
-                let $responseError = $(form).find('.nk-form-response-error');
+                let $responseSuccess = $(form).find('.blk-form-response-success');
+                let $responseError = $(form).find('.blk-form-response-error');
                 $(form).ajaxSubmit({
                     type: 'POST',
                     success (response) {

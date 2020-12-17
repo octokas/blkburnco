@@ -2,7 +2,7 @@ import { $, $wnd, $body, wndW, wndH, tween, isTouch, debounceResize } from "./_u
 
 /* Init Page Slider */
 function initPageSlider ($context) {
-    let $slider = $('.nk-slider');
+    let $slider = $('.blk-slider');
     const self = this;
 
     if(!$slider.length) {
@@ -18,14 +18,14 @@ function initPageSlider ($context) {
     if(autoplay && transitionSpeed >= autoplay ) {
         autoplay = transitionSpeed + 100;
     }
-    let hideTitles = $slider.hasClass('nk-slider-hide-titles');
+    let hideTitles = $slider.hasClass('blk-slider-hide-titles');
     let activeCategory = $slider.attr('data-active-category') || '*';
     let activeCatOnBigScreens = activeCategory;
 
-    let $sliderNav = $('.nk-slider-nav');
+    let $sliderNav = $('.blk-slider-nav');
     let $sliderNavItemsCont = $sliderNav.children('ul');
-    let $sliderCategories = $('.nk-slider-categories');
-    let $sliderSlide = $('<div class="nk-slider-current-slide"></div>').css({
+    let $sliderCategories = $('.blk-slider-categories');
+    let $sliderSlide = $('<div class="blk-slider-current-slide"></div>').css({
             position: 'absolute',
             top: 0,
             left: 0,
@@ -35,18 +35,18 @@ function initPageSlider ($context) {
             backgroundSize: 'cover'
         }).appendTo($slider);
     let $sliderNextSlide = $sliderSlide.clone()
-        .removeClass('nk-slider-current-slide').addClass('nk-slider-next-slide')
+        .removeClass('blk-slider-current-slide').addClass('blk-slider-next-slide')
         .css({
             display: 'none',
             zIndex: 1
         }).appendTo($slider);
     // additional blocks for divide slider transition
-    let $sliderNextSlide_2 = $sliderNextSlide.clone().css('display', 'block').removeClass('nk-slider-next-slide').appendTo($sliderNextSlide);
+    let $sliderNextSlide_2 = $sliderNextSlide.clone().css('display', 'block').removeClass('blk-slider-next-slide').appendTo($sliderNextSlide);
     let $sliderNextSlide_2_inner = $sliderNextSlide_2.clone().appendTo($sliderNextSlide_2);
     let $sliderNextSlide_3 = $sliderNextSlide_2.clone().appendTo($sliderNextSlide);
     let $sliderNextSlide_3_inner = $sliderNextSlide_3.children('div');
     let $sliderVideoSlide = $('<div>').css('position', 'relative');
-    $('<div class="nk-slider-video-slide"></div>').css({
+    $('<div class="blk-slider-video-slide"></div>').css({
         position: 'absolute',
         top: 0,
         left: 0,
@@ -87,7 +87,7 @@ function initPageSlider ($context) {
     self.sliderParseSlides = ($instance = $slider) => {
         let slides = [];
         let i = 0;
-        $instance.find('.nk-slider-item').each(function () {
+        $instance.find('.blk-slider-item').each(function () {
             slides.push({
                 index: i++,
                 active: $(this).hasClass('active'),
@@ -665,7 +665,7 @@ function initPageSlider ($context) {
         }
         hideTitles = !!options.hideTitles;
 
-        $slider[(hideTitles ? 'add' : 'remove') + 'Class']('nk-slider-hide-titles');
+        $slider[(hideTitles ? 'add' : 'remove') + 'Class']('blk-slider-hide-titles');
         $slider.attr('data-transition-effect', transitionEffect);
         $slider.attr('data-transition-speed', transitionSpeed);
         $slider.attr('data-category-transition-effect', categoryTransitionEffect);
@@ -734,10 +734,10 @@ function initPageSlider ($context) {
     $sliderNavItemsCont.on('click', 'li', function () {
         self.sliderShowSlide($(this).index());
     });
-    $sliderNav.on('click', '.nk-slider-nav-next', function () {
+    $sliderNav.on('click', '.blk-slider-nav-next', function () {
         self.sliderShowNext();
     });
-    $sliderNav.on('click', '.nk-slider-nav-prev', function () {
+    $sliderNav.on('click', '.blk-slider-nav-prev', function () {
         self.sliderShowPrev();
     });
 
@@ -767,7 +767,7 @@ function initPageSlider ($context) {
         let thisScrollDate = lastScrollDate;
         $wnd.on(wheelEvent, (e) => {
             // check if delta >= 2 and mouse under slider
-            if(Math.abs(e.originalEvent.deltaY) < 2 || !$(e.target).parents('.nk-layout').length) {
+            if(Math.abs(e.originalEvent.deltaY) < 2 || !$(e.target).parents('.blk-layout').length) {
                 return;
             }
 
@@ -809,18 +809,18 @@ function initPageSlider ($context) {
     if(!isTouch || typeof Hammer === 'undefined') {
         return;
     }
-    let $layout = $('.nk-layout');
+    let $layout = $('.blk-layout');
     let mc = new Hammer($layout[0], {
         domEvents: true
     });
     mc.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
     $layout.on('swipeup swipeleft', function(e) {
-        if($(e.target).parents('.nk-layout').length) {
+        if($(e.target).parents('.blk-layout').length) {
             self.sliderShowPrev();
         }
     });
     $layout.on('swipedown swiperight', function(e) {
-        if($(e.target).parents('.nk-layout').length) {
+        if($(e.target).parents('.blk-layout').length) {
             self.sliderShowNext();
         }
     });

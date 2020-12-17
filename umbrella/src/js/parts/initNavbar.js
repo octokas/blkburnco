@@ -7,15 +7,15 @@ import { $, tween, $doc } from "./_utility";
  -------------------------------------------------------------------*/
 function initNavbar () {
     const self = this;
-    let $main = $('.nk-main');
-    let $navbar = $('.nk-navbar');
-    let $navbarBg = $navbar.next('.nk-navbar-bg');
-    let $navbarBgImage = $navbarBg.find('.nk-navbar-image');
+    let $main = $('.blk-main');
+    let $navbar = $('.blk-navbar');
+    let $navbarBg = $navbar.next('.blk-navbar-bg');
+    let $navbarBgImage = $navbarBg.find('.blk-navbar-image');
     let busy = 0;
 
     // toggle navbars
     function updateTogglers () {
-        $('.nk-nav-toggle').each(function () {
+        $('.blk-nav-toggle').each(function () {
             let active = $navbar.hasClass('active');
             $(this)[(active ? 'add' : 'remove') + 'Class']('active');
         });
@@ -138,13 +138,13 @@ function initNavbar () {
 
         updateTogglers();
     };
-    $doc.on('click', '.nk-nav-toggle', function (e) {
+    $doc.on('click', '.blk-nav-toggle', function (e) {
         e.preventDefault();
         self.toggleNavbar();
     });
 
     // close on click on layout elements
-    $doc.on('click', '.nk-layout', function (e) {
+    $doc.on('click', '.blk-layout', function (e) {
         if(!e.isDefaultPrevented()) {
             self.hideNavbar();
         }

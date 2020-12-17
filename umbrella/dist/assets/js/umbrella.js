@@ -86,7 +86,7 @@ var isTouch = 'ontouchstart' in window || window.DocumentTouch && document insta
 function isUmbrellaLayout() {
     var $context = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : $doc;
 
-    return $context.find('.nk-main, nk-layout, .nk-blog').length;
+    return $context.find('.blk-main, blk-layout, .blk-blog').length;
 }
 
 // add 'is-mobile' or 'is-desktop' classname to html tag
@@ -203,11 +203,11 @@ var bodyOverflowEnabled = void 0;
 var isBodyOverflowing = void 0;
 var scrollbarWidth = void 0;
 var originalBodyPadding = void 0;
-var $headerContent = $('.nk-header > *');
+var $headerContent = $('.blk-header > *');
 function bodyGetScrollbarWidth() {
     // thx d.walsh
     var scrollDiv = document.createElement('div');
-    scrollDiv.className = 'nk-body-scrollbar-measure';
+    scrollDiv.className = 'blk-body-scrollbar-measure';
     $body[0].appendChild(scrollDiv);
     var result = scrollDiv.offsetWidth - scrollDiv.clientWidth;
     $body[0].removeChild(scrollDiv);
@@ -337,8 +337,8 @@ function _setOptions(newOpts) {
 
  -------------------------------------------------------------------*/
 var timeout = void 0;
-var $targets = $('.nk-layout').find('.nk-layout-top-left, .nk-layout-top-left-rotated, .nk-layout-top-center, .nk-layout-top-right, .nk-layout-bottom-left, .nk-layout-bottom-right, .nk-layout-bottom-center, .nk-layout-content-subtitle, .nk-layout-content-tagline');
-var $logo = $('.nk-layout [data-logo-dark]');
+var $targets = $('.blk-layout').find('.blk-layout-top-left, .blk-layout-top-left-rotated, .blk-layout-top-center, .blk-layout-top-right, .blk-layout-bottom-left, .blk-layout-bottom-right, .blk-layout-bottom-center, .blk-layout-content-subtitle, .blk-layout-content-tagline');
+var $logo = $('.blk-layout [data-logo-dark]');
 $logo.attr('data-logo-light', $logo.attr('src'));
 if (isUmbrellaLayout()) {
     BackgroundCheck.init({
@@ -392,9 +392,9 @@ function _updateBrightness() {
  type = page, blog
 
  -------------------------------------------------------------------*/
-var $spinnerPlace = $('.nk-loading-spinner-place');
-var $preloader = $('<div class="nk-preloader">').appendTo($body);
-var spinner = '<div class="nk-spinner"><span></span></div>';
+var $spinnerPlace = $('.blk-loading-spinner-place');
+var $preloader = $('<div class="blk-preloader">').appendTo($body);
+var spinner = '<div class="blk-spinner"><span></span></div>';
 var blogSpinnerInSpinnerPlace = 0;
 
 function _runPreloader() {
@@ -437,10 +437,10 @@ function _stopPreloader() {
  -------------------------------------------------------------------*/
 function _initPages() {
     var self = this;
-    var $layout = $('.nk-layout:eq(0)');
-    var $main = $('.nk-main');
-    var $mainBg = $main.next('.nk-main-bg');
-    var $blog = $('.nk-blog');
+    var $layout = $('.blk-layout:eq(0)');
+    var $main = $('.blk-main');
+    var $mainBg = $main.next('.blk-main-bg');
+    var $blog = $('.blk-blog');
 
     // current page data (with dynamic changed titles). Available data see in generatePageData function
     var cur = {};
@@ -477,20 +477,20 @@ function _initPages() {
         var $href = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : location.href;
         var $page = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : $doc;
 
-        var $layout = $page.find('.nk-layout:eq(0)');
-        var $main = $page.find('.nk-main:eq(0)');
-        var $blog = $page.find('.nk-blog:eq(0)');
-        var $slider = $layout.find('.nk-slider');
-        var $sliderNav = $page.find('.nk-slider-nav');
+        var $layout = $page.find('.blk-layout:eq(0)');
+        var $main = $page.find('.blk-main:eq(0)');
+        var $blog = $page.find('.blk-blog:eq(0)');
+        var $slider = $layout.find('.blk-slider');
+        var $sliderNav = $page.find('.blk-slider-nav');
 
         return {
             $page_html: $page.prop('outerHTML') || $page.prop('innerHTML'),
 
             href: $href,
             title: $page.find('title:eq(0)').text() || document.title,
-            pageTitle: $layout.find('.nk-layout-content-title').html(),
-            pageSubtitle: $layout.find('.nk-layout-content-subtitle').html(),
-            pageTagline: $layout.find('.nk-layout-content-tagline').html(),
+            pageTitle: $layout.find('.blk-layout-content-title').html(),
+            pageSubtitle: $layout.find('.blk-layout-content-subtitle').html(),
+            pageTagline: $layout.find('.blk-layout-content-tagline').html(),
 
             slider: $slider,
             sliderCategory: $slider.attr('data-active-category'),
@@ -500,23 +500,23 @@ function _initPages() {
             sliderCategoryTransitionEffect: $slider.attr('data-category-transition-effect'),
             sliderAutoplay: $slider.attr('data-autoplay'),
             sliderForceReload: $slider.attr('data-force-reload'),
-            sliderHideTitles: $slider.hasClass('nk-slider-hide-titles'),
-            sliderNavSlim: $sliderNav.hasClass('nk-slider-nav-slim'),
+            sliderHideTitles: $slider.hasClass('blk-slider-hide-titles'),
+            sliderNavSlim: $sliderNav.hasClass('blk-slider-nav-slim'),
 
-            navTopCenterShow: !$layout.find('.nk-layout-top-center .nk-nav-hide').length,
-            navTopLeftShow: !$layout.find('.nk-layout-top-left-rotated .nk-nav-hide').length,
-            navBottomLeftShow: !$layout.find('.nk-layout-bottom-left .nk-nav-hide').length,
-            navBottomLeftBlogShow: !$layout.find('.nk-layout-bottom-left-blog .nk-nav-hide').length,
-            navBottomCenterShow: !$layout.find('.nk-layout-bottom-center .nk-nav-hide').length,
+            navTopCenterShow: !$layout.find('.blk-layout-top-center .blk-nav-hide').length,
+            navTopLeftShow: !$layout.find('.blk-layout-top-left-rotated .blk-nav-hide').length,
+            navBottomLeftShow: !$layout.find('.blk-layout-bottom-left .blk-nav-hide').length,
+            navBottomLeftBlogShow: !$layout.find('.blk-layout-bottom-left-blog .blk-nav-hide').length,
+            navBottomCenterShow: !$layout.find('.blk-layout-bottom-center .blk-nav-hide').length,
 
             contentHTML: $main.html(),
             contentShow: $main.hasClass('active'),
-            contentLowerTitle: $main.hasClass('nk-main-lower-title'),
+            contentLowerTitle: $main.hasClass('blk-main-lower-title'),
             contentTransitionIn: $main.attr('data-transition-in'),
             contentTransitionOut: $main.attr('data-transition-out'),
             contentCustomColor: $main.attr('data-color') || false,
-            contentCustomBg: $main.next('.nk-main-bg').attr('data-bg') || false,
-            contentCustomBgMobile: $main.next('.nk-main-bg').attr('data-bg-mobile') || false,
+            contentCustomBg: $main.next('.blk-main-bg').attr('data-bg') || false,
+            contentCustomBgMobile: $main.next('.blk-main-bg').attr('data-bg-mobile') || false,
 
             blog: $blog,
             blogShow: $blog.hasClass('active')
@@ -531,7 +531,7 @@ function _initPages() {
             $blog.addClass('active');
 
             var posts = [];
-            def.blog.find('> .nk-blog-item a').each(function () {
+            def.blog.find('> .blk-blog-item a').each(function () {
                 posts.push({
                     title: $(this).text(),
                     url: $(this).attr('href')
@@ -567,13 +567,13 @@ function _initPages() {
         var styles = [];
 
         if (def.contentCustomColor) {
-            styles.push('.nk-main {', '   color: ' + def.contentCustomColor + ';', '}');
+            styles.push('.blk-main {', '   color: ' + def.contentCustomColor + ';', '}');
         }
         if (def.contentCustomBg) {
-            styles.push('.nk-main + .nk-main-bg {', '   background-color: ' + def.contentCustomBg + ';', '}');
+            styles.push('.blk-main + .blk-main-bg {', '   background-color: ' + def.contentCustomBg + ';', '}');
         }
         if (def.contentCustomBgMobile) {
-            styles.push('@media (max-width: ' + self.options.mobile + 'px) {', '.nk-main + .nk-main-bg {', '   background-color: ' + def.contentCustomBgMobile + ';', '}', '}');
+            styles.push('@media (max-width: ' + self.options.mobile + 'px) {', '.blk-main + .blk-main-bg {', '   background-color: ' + def.contentCustomBgMobile + ';', '}', '}');
         }
 
         styles = styles.join('\n');
@@ -592,7 +592,7 @@ function _initPages() {
 
         var $content = $(def.contentHTML);
         var $mainNano = $main.find('.nano-content');
-        var $mainLayout = $main.find('.nk-layout');
+        var $mainLayout = $main.find('.blk-layout');
 
         // animate
         if (animate) {
@@ -600,7 +600,7 @@ function _initPages() {
             tween.to($mainLayout, 0.3, {
                 opacity: 0,
                 onComplete: function onComplete() {
-                    $mainLayout.html($content.filter('.nk-layout').html());
+                    $mainLayout.html($content.filter('.blk-layout').html());
                     tween.to($mainLayout, 0.3, {
                         opacity: 1
                     });
@@ -613,7 +613,7 @@ function _initPages() {
                 force3D: true,
                 onComplete: function onComplete() {
                     $mainNano.html($content.find('.nano-content').html());
-                    $main[(def.contentLowerTitle ? 'add' : 'remove') + 'Class']('nk-main-lower-title');
+                    $main[(def.contentLowerTitle ? 'add' : 'remove') + 'Class']('blk-main-lower-title');
 
                     updateContentColors();
                     self.initForms();
@@ -637,8 +637,8 @@ function _initPages() {
         // no animate
         else {
                 $mainNano.html($content.find('.nano-content').html());
-                $mainLayout.html($content.filter('.nk-layout').html());
-                $main[(def.contentLowerTitle ? 'add' : 'remove') + 'Class']('nk-main-lower-title');
+                $mainLayout.html($content.filter('.blk-layout').html());
+                $main[(def.contentLowerTitle ? 'add' : 'remove') + 'Class']('blk-main-lower-title');
 
                 updateContentColors();
                 self.initForms();
@@ -708,7 +708,7 @@ function _initPages() {
 
     // activate / deactivate menu items
     function updateMenuItems() {
-        $('.nk-nav ul:not(.nk-slider-categories) > li > a').each(function () {
+        $('.blk-nav ul:not(.blk-slider-categories) > li > a').each(function () {
             var $li = $(this).parent('li');
             if (this.href === def.href) {
                 $li.addClass('active');
@@ -748,19 +748,19 @@ function _initPages() {
             hideTitles: def.sliderHideTitles
         }, function () {
             // change slider navigation style
-            $('.nk-slider-nav')[(def.sliderNavSlim ? 'add' : 'remove') + 'Class']('nk-slider-nav-slim');
+            $('.blk-slider-nav')[(def.sliderNavSlim ? 'add' : 'remove') + 'Class']('blk-slider-nav-slim');
         });
         if (def.blogShow || cur.blogShow) {
             // change slider navigation style
-            $('.nk-slider-nav')[(def.sliderNavSlim ? 'add' : 'remove') + 'Class']('nk-slider-nav-slim');
+            $('.blk-slider-nav')[(def.sliderNavSlim ? 'add' : 'remove') + 'Class']('blk-slider-nav-slim');
         }
 
         // show / hide navigations
-        $layout.find('.nk-layout-top-center .nk-nav')[(def.navTopCenterShow ? 'remove' : 'add') + 'Class']('nk-nav-hide');
-        $layout.find('.nk-layout-top-left-rotated .nk-nav')[(def.navTopLeftShow ? 'remove' : 'add') + 'Class']('nk-nav-hide');
-        $layout.find('.nk-layout-bottom-left .nk-nav')[(def.navBottomLeftShow ? 'remove' : 'add') + 'Class']('nk-nav-hide');
-        $layout.find('.nk-layout-bottom-left-blog .nk-nav')[(def.navBottomLeftBlogShow ? 'remove' : 'add') + 'Class']('nk-nav-hide');
-        $layout.find('.nk-layout-bottom-center .nk-nav')[(def.navBottomCenterShow ? 'remove' : 'add') + 'Class']('nk-nav-hide');
+        $layout.find('.blk-layout-top-center .blk-nav')[(def.navTopCenterShow ? 'remove' : 'add') + 'Class']('blk-nav-hide');
+        $layout.find('.blk-layout-top-left-rotated .blk-nav')[(def.navTopLeftShow ? 'remove' : 'add') + 'Class']('blk-nav-hide');
+        $layout.find('.blk-layout-bottom-left .blk-nav')[(def.navBottomLeftShow ? 'remove' : 'add') + 'Class']('blk-nav-hide');
+        $layout.find('.blk-layout-bottom-left-blog .blk-nav')[(def.navBottomLeftBlogShow ? 'remove' : 'add') + 'Class']('blk-nav-hide');
+        $layout.find('.blk-layout-bottom-center .blk-nav')[(def.navBottomCenterShow ? 'remove' : 'add') + 'Class']('blk-nav-hide');
 
         // show blog
         if (def.blogShow && !cur.blogShow) {
@@ -1013,16 +1013,16 @@ function _initPages() {
  -------------------------------------------------------------------*/
 function _initPageTitles() {
     var self = this;
-    var $layout = $('.nk-layout:eq(0)');
-    var $title = $layout.find('.nk-layout-content-title');
-    var $subtitle = $layout.find('.nk-layout-content-subtitle');
-    var $tagline = $layout.find('.nk-layout-content-tagline');
-    var $main = $('.nk-main:eq(0)');
+    var $layout = $('.blk-layout:eq(0)');
+    var $title = $layout.find('.blk-layout-content-title');
+    var $subtitle = $layout.find('.blk-layout-content-subtitle');
+    var $tagline = $layout.find('.blk-layout-content-tagline');
+    var $main = $('.blk-main:eq(0)');
 
     // create shadow items for transitions
-    var $titleShadow = $('<h4>').css('display', 'none').addClass('nk-layout-content-title').insertAfter($title);
-    var $subtitleShadow = $('<h4>').css('display', 'none').addClass('nk-layout-content-subtitle').insertAfter($subtitle);
-    var $taglineShadow = $('<div>').css('display', 'none').addClass('nk-layout-content-tagline').insertAfter($tagline);
+    var $titleShadow = $('<h4>').css('display', 'none').addClass('blk-layout-content-title').insertAfter($title);
+    var $subtitleShadow = $('<h4>').css('display', 'none').addClass('blk-layout-content-subtitle').insertAfter($subtitle);
+    var $taglineShadow = $('<div>').css('display', 'none').addClass('blk-layout-content-tagline').insertAfter($tagline);
 
     // show title
     // effects: left, right, fade
@@ -1167,7 +1167,7 @@ function _initPageTitles() {
 
 /* Init Page Slider */
 function _initPageSlider($context) {
-    var $slider = $('.nk-slider');
+    var $slider = $('.blk-slider');
     var self = this;
 
     if (!$slider.length) {
@@ -1183,14 +1183,14 @@ function _initPageSlider($context) {
     if (autoplay && transitionSpeed >= autoplay) {
         autoplay = transitionSpeed + 100;
     }
-    var hideTitles = $slider.hasClass('nk-slider-hide-titles');
+    var hideTitles = $slider.hasClass('blk-slider-hide-titles');
     var activeCategory = $slider.attr('data-active-category') || '*';
     var activeCatOnBigScreens = activeCategory;
 
-    var $sliderNav = $('.nk-slider-nav');
+    var $sliderNav = $('.blk-slider-nav');
     var $sliderNavItemsCont = $sliderNav.children('ul');
-    var $sliderCategories = $('.nk-slider-categories');
-    var $sliderSlide = $('<div class="nk-slider-current-slide"></div>').css({
+    var $sliderCategories = $('.blk-slider-categories');
+    var $sliderSlide = $('<div class="blk-slider-current-slide"></div>').css({
         position: 'absolute',
         top: 0,
         left: 0,
@@ -1199,17 +1199,17 @@ function _initPageSlider($context) {
         backgroundPosition: 'center center',
         backgroundSize: 'cover'
     }).appendTo($slider);
-    var $sliderNextSlide = $sliderSlide.clone().removeClass('nk-slider-current-slide').addClass('nk-slider-next-slide').css({
+    var $sliderNextSlide = $sliderSlide.clone().removeClass('blk-slider-current-slide').addClass('blk-slider-next-slide').css({
         display: 'none',
         zIndex: 1
     }).appendTo($slider);
     // additional blocks for divide slider transition
-    var $sliderNextSlide_2 = $sliderNextSlide.clone().css('display', 'block').removeClass('nk-slider-next-slide').appendTo($sliderNextSlide);
+    var $sliderNextSlide_2 = $sliderNextSlide.clone().css('display', 'block').removeClass('blk-slider-next-slide').appendTo($sliderNextSlide);
     var $sliderNextSlide_2_inner = $sliderNextSlide_2.clone().appendTo($sliderNextSlide_2);
     var $sliderNextSlide_3 = $sliderNextSlide_2.clone().appendTo($sliderNextSlide);
     var $sliderNextSlide_3_inner = $sliderNextSlide_3.children('div');
     var $sliderVideoSlide = $('<div>').css('position', 'relative');
-    $('<div class="nk-slider-video-slide"></div>').css({
+    $('<div class="blk-slider-video-slide"></div>').css({
         position: 'absolute',
         top: 0,
         left: 0,
@@ -1252,7 +1252,7 @@ function _initPageSlider($context) {
 
         var slides = [];
         var i = 0;
-        $instance.find('.nk-slider-item').each(function () {
+        $instance.find('.blk-slider-item').each(function () {
             slides.push({
                 index: i++,
                 active: $(this).hasClass('active'),
@@ -1843,7 +1843,7 @@ function _initPageSlider($context) {
         }
         hideTitles = !!options.hideTitles;
 
-        $slider[(hideTitles ? 'add' : 'remove') + 'Class']('nk-slider-hide-titles');
+        $slider[(hideTitles ? 'add' : 'remove') + 'Class']('blk-slider-hide-titles');
         $slider.attr('data-transition-effect', transitionEffect);
         $slider.attr('data-transition-speed', transitionSpeed);
         $slider.attr('data-category-transition-effect', categoryTransitionEffect);
@@ -1911,10 +1911,10 @@ function _initPageSlider($context) {
     $sliderNavItemsCont.on('click', 'li', function () {
         self.sliderShowSlide($(this).index());
     });
-    $sliderNav.on('click', '.nk-slider-nav-next', function () {
+    $sliderNav.on('click', '.blk-slider-nav-next', function () {
         self.sliderShowNext();
     });
-    $sliderNav.on('click', '.nk-slider-nav-prev', function () {
+    $sliderNav.on('click', '.blk-slider-nav-prev', function () {
         self.sliderShowPrev();
     });
 
@@ -1943,7 +1943,7 @@ function _initPageSlider($context) {
         var thisScrollDate = lastScrollDate;
         $wnd.on(wheelEvent, function (e) {
             // check if delta >= 2 and mouse under slider
-            if (Math.abs(e.originalEvent.deltaY) < 2 || !$(e.target).parents('.nk-layout').length) {
+            if (Math.abs(e.originalEvent.deltaY) < 2 || !$(e.target).parents('.blk-layout').length) {
                 return;
             }
 
@@ -1985,18 +1985,18 @@ function _initPageSlider($context) {
     if (!isTouch || typeof Hammer === 'undefined') {
         return;
     }
-    var $layout = $('.nk-layout');
+    var $layout = $('.blk-layout');
     var mc = new Hammer($layout[0], {
         domEvents: true
     });
     mc.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
     $layout.on('swipeup swipeleft', function (e) {
-        if ($(e.target).parents('.nk-layout').length) {
+        if ($(e.target).parents('.blk-layout').length) {
             self.sliderShowPrev();
         }
     });
     $layout.on('swipedown swiperight', function (e) {
-        if ($(e.target).parents('.nk-layout').length) {
+        if ($(e.target).parents('.blk-layout').length) {
             self.sliderShowNext();
         }
     });
@@ -2009,9 +2009,9 @@ function _initPageSlider($context) {
  -------------------------------------------------------------------*/
 function initPageContent() {
     var self = this;
-    var $navbar = $('.nk-navbar');
-    var $main = $('.nk-main');
-    var $mainBg = $main.next('.nk-main-bg');
+    var $navbar = $('.blk-navbar');
+    var $main = $('.blk-main');
+    var $mainBg = $main.next('.blk-main-bg');
     var $mainAndBg = $main.add($mainBg);
     var busy = 0;
 
@@ -2175,14 +2175,14 @@ $.fn.reverse = [].reverse;
 
 -------------------------------------------------------------------*/
 function _initBlog() {
-    var $blog = $('.nk-blog');
-    var $navbar = $('.nk-navbar');
-    var $sliderNav = $('.nk-slider-nav');
+    var $blog = $('.blk-blog');
+    var $navbar = $('.blk-navbar');
+    var $sliderNav = $('.blk-slider-nav');
     var $sliderNavItemsCont = $sliderNav.children('ul');
-    var $renderedBlog = $('<div class="nk-blog-rendered">').hide().appendTo($blog);
+    var $renderedBlog = $('<div class="blk-blog-rendered">').hide().appendTo($blog);
     // insert posts containers
     for (var k = 0; k < 3; k++) {
-        $renderedBlog.append('<div class="nk-blog-item"><h2><a href=""></a></h2></div>');
+        $renderedBlog.append('<div class="blk-blog-item"><h2><a href=""></a></h2></div>');
     }
     var blogList = [];
     var self = this;
@@ -2237,7 +2237,7 @@ function _initBlog() {
             return;
         }
         var result = [];
-        $blog.find('> .nk-blog-item a').each(function () {
+        $blog.find('> .blk-blog-item a').each(function () {
             result.push({
                 title: $(this).text(),
                 url: $(this).attr('href')
@@ -2262,7 +2262,7 @@ function _initBlog() {
                 callback();
             }
         }
-        $renderedBlog.find('.nk-blog-item').each(function () {
+        $renderedBlog.find('.blk-blog-item').each(function () {
             var $this = $(this);
             var $link = $this.find('a');
             var i = $this.index();
@@ -2420,9 +2420,9 @@ function _initBlog() {
         isShown = 1;
 
         // clear items
-        var $items = $renderedBlog.find('.nk-blog-item:eq(0), .nk-blog-item:eq(1)');
-        var $hideItems = $renderedBlog.find('.nk-blog-item > *');
-        $renderedBlog.find('.nk-blog-item a').html('');
+        var $items = $renderedBlog.find('.blk-blog-item:eq(0), .blk-blog-item:eq(1)');
+        var $hideItems = $renderedBlog.find('.blk-blog-item > *');
+        $renderedBlog.find('.blk-blog-item a').html('');
 
         // stop previous tween
         tween.killTweensOf($items);
@@ -2473,8 +2473,8 @@ function _initBlog() {
         isShown = 0;
 
         // clear items
-        var $items = $renderedBlog.find('.nk-blog-item:eq(0), .nk-blog-item:eq(1)');
-        var $hideItems = $renderedBlog.find('.nk-blog-item > *');
+        var $items = $renderedBlog.find('.blk-blog-item:eq(0), .blk-blog-item:eq(1)');
+        var $hideItems = $renderedBlog.find('.blk-blog-item > *');
 
         // stop previous tween
         tween.killTweensOf($items);
@@ -2516,12 +2516,12 @@ function _initBlog() {
     }
 
     // on click nav item
-    $sliderNav.on('click', '.nk-slider-nav-next', function () {
+    $sliderNav.on('click', '.blk-slider-nav-next', function () {
         if (self.getDefaultPageData().blogShow) {
             self.showNextPosts();
         }
     });
-    $sliderNav.on('click', '.nk-slider-nav-prev', function () {
+    $sliderNav.on('click', '.blk-slider-nav-prev', function () {
         if (self.getDefaultPageData().blogShow) {
             self.showPrevPosts();
         }
@@ -2537,7 +2537,7 @@ function _initBlog() {
     if (wheelEvent) {
         $wnd.on(wheelEvent, function (e) {
             // check if delta >= 2 and mouse under slider
-            if (!self.getDefaultPageData().blogShow || Math.abs(e.originalEvent.deltaY) < 2 || !$(e.target).parents('.nk-layout, .nk-blog').length) {
+            if (!self.getDefaultPageData().blogShow || Math.abs(e.originalEvent.deltaY) < 2 || !$(e.target).parents('.blk-layout, .blk-blog').length) {
                 return;
             }
 
@@ -2558,12 +2558,12 @@ function _initBlog() {
     });
     mc.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
     mc.on('swipeup swipeleft', function (e) {
-        if (self.getDefaultPageData().blogShow && $(e.target).parents('.nk-layout, .nk-blog').length) {
+        if (self.getDefaultPageData().blogShow && $(e.target).parents('.blk-layout, .blk-blog').length) {
             self.showNextPosts();
         }
     });
     mc.on('swipedown swiperight', function (e) {
-        if (self.getDefaultPageData().blogShow && $(e.target).parents('.nk-layout, .nk-blog').length) {
+        if (self.getDefaultPageData().blogShow && $(e.target).parents('.blk-layout, .blk-blog').length) {
             self.showPrevPosts();
         }
     });
@@ -2576,15 +2576,15 @@ function _initBlog() {
  -------------------------------------------------------------------*/
 function _initNavbar() {
     var self = this;
-    var $main = $('.nk-main');
-    var $navbar = $('.nk-navbar');
-    var $navbarBg = $navbar.next('.nk-navbar-bg');
-    var $navbarBgImage = $navbarBg.find('.nk-navbar-image');
+    var $main = $('.blk-main');
+    var $navbar = $('.blk-navbar');
+    var $navbarBg = $navbar.next('.blk-navbar-bg');
+    var $navbarBgImage = $navbarBg.find('.blk-navbar-image');
     var busy = 0;
 
     // toggle navbars
     function updateTogglers() {
-        $('.nk-nav-toggle').each(function () {
+        $('.blk-nav-toggle').each(function () {
             var active = $navbar.hasClass('active');
             $(this)[(active ? 'add' : 'remove') + 'Class']('active');
         });
@@ -2713,13 +2713,13 @@ function _initNavbar() {
 
         updateTogglers();
     };
-    $doc.on('click', '.nk-nav-toggle', function (e) {
+    $doc.on('click', '.blk-nav-toggle', function (e) {
         e.preventDefault();
         self.toggleNavbar();
     });
 
     // close on click on layout elements
-    $doc.on('click', '.nk-layout', function (e) {
+    $doc.on('click', '.blk-layout', function (e) {
         if (!e.isDefaultPrevented()) {
             self.hideNavbar();
         }
@@ -2745,9 +2745,9 @@ function _initForms() {
     var self = this;
 
     // Validate Forms
-    $('form:not(.nk-form-ajax):not(.nk-mchimp):not(.ready)').addClass('ready').each(function () {
+    $('form:not(.blk-form-ajax):not(.blk-mchimp):not(.ready)').addClass('ready').each(function () {
         $(this).validate({
-            errorClass: 'nk-error',
+            errorClass: 'blk-error',
             errorElement: 'div',
             errorPlacement: function errorPlacement(error, element) {
                 var $parent = element.parent('.input-group');
@@ -2761,9 +2761,9 @@ function _initForms() {
         });
     });
     // ajax form
-    $('form.nk-form-ajax:not(.ready)').addClass('ready').each(function () {
+    $('form.blk-form-ajax:not(.ready)').addClass('ready').each(function () {
         $(this).validate({
-            errorClass: 'nk-error',
+            errorClass: 'blk-error',
             errorElement: 'div',
             errorPlacement: function errorPlacement(error, element) {
                 var $parent = element.parent('.input-group');
@@ -2777,8 +2777,8 @@ function _initForms() {
 
             // Submit the form via ajax (see: jQuery Form plugin)
             submitHandler: function submitHandler(form) {
-                var $responseSuccess = $(form).find('.nk-form-response-success');
-                var $responseError = $(form).find('.nk-form-response-error');
+                var $responseSuccess = $(form).find('.blk-form-response-success');
+                var $responseError = $(form).find('.blk-form-response-error');
                 $(form).ajaxSubmit({
                     type: 'POST',
                     success: function success(response) {
@@ -2810,7 +2810,7 @@ function _initForms() {
 
 -------------------------------------------------------------------*/
 function _initFormsMailChimp() {
-    var $mchimp = $('form.nk-mchimp');
+    var $mchimp = $('form.blk-mchimp');
     if (typeof $.fn.ajaxSubmit === 'undefined' || typeof $.validator === 'undefined' || !$mchimp.length) {
         return;
     }
@@ -2940,7 +2940,7 @@ function _initFormsMailChimp() {
         }
 
         var validator = $form.validate({
-            errorClass: 'nk-error',
+            errorClass: 'blk-error',
             errorElement: 'div',
             // Grouping fields makes jQuery Validation display one error for all the fields in the group
             // It doesn't have anything to do with how the fields are validated (together or separately),
@@ -2967,8 +2967,8 @@ function _initFormsMailChimp() {
 
             // Submit the form via ajax (see: jQuery Form plugin)
             submitHandler: function submitHandler() {
-                var $responseSuccess = $form.find('.nk-form-response-success');
-                var $responseError = $form.find('.nk-form-response-error');
+                var $responseSuccess = $form.find('.blk-form-response-success');
+                var $responseError = $form.find('.blk-form-response-error');
                 var url = $form.attr('action');
                 url = url.replace('/post?u=', '/post-json?u=');
                 url += '&c=?';

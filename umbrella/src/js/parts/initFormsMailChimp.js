@@ -6,7 +6,7 @@ import { $ } from "./_utility";
 
 -------------------------------------------------------------------*/
 function initFormsMailChimp () {
-    let $mchimp = $('form.nk-mchimp');
+    let $mchimp = $('form.blk-mchimp');
     if(typeof $.fn.ajaxSubmit === 'undefined' || typeof $.validator === 'undefined' || !$mchimp.length) {
         return;
     }
@@ -136,7 +136,7 @@ function initFormsMailChimp () {
         }
 
         let validator = $form.validate({
-            errorClass: 'nk-error',
+            errorClass: 'blk-error',
             errorElement: 'div',
             // Grouping fields makes jQuery Validation display one error for all the fields in the group
             // It doesn't have anything to do with how the fields are validated (together or separately),
@@ -162,8 +162,8 @@ function initFormsMailChimp () {
             },
             // Submit the form via ajax (see: jQuery Form plugin)
             submitHandler () {
-                let $responseSuccess = $form.find('.nk-form-response-success');
-                let $responseError = $form.find('.nk-form-response-error');
+                let $responseSuccess = $form.find('.blk-form-response-success');
+                let $responseError = $form.find('.blk-form-response-error');
                 let url = $form.attr('action');
                     url = url.replace('/post?u=', '/post-json?u=');
                     url += '&c=?';

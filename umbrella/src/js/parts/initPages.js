@@ -7,10 +7,10 @@ import { $, $doc, tween, debounceResize, isUmbrellaLayout } from "./_utility";
  -------------------------------------------------------------------*/
 function initPages () {
     const self = this;
-    let $layout = $('.nk-layout:eq(0)');
-    let $main = $('.nk-main');
-    let $mainBg = $main.next('.nk-main-bg');
-    let $blog = $('.nk-blog');
+    let $layout = $('.blk-layout:eq(0)');
+    let $main = $('.blk-main');
+    let $mainBg = $main.next('.blk-main-bg');
+    let $blog = $('.blk-blog');
 
     // current page data (with dynamic changed titles). Available data see in generatePageData function
     let cur = {};
@@ -40,20 +40,20 @@ function initPages () {
 
     // generate page data from dom
     self.generatePageData = ($href = location.href, $page = $doc) => {
-        let $layout = $page.find('.nk-layout:eq(0)');
-        let $main = $page.find('.nk-main:eq(0)');
-        let $blog = $page.find('.nk-blog:eq(0)');
-        let $slider = $layout.find('.nk-slider');
-        let $sliderNav = $page.find('.nk-slider-nav');
+        let $layout = $page.find('.blk-layout:eq(0)');
+        let $main = $page.find('.blk-main:eq(0)');
+        let $blog = $page.find('.blk-blog:eq(0)');
+        let $slider = $layout.find('.blk-slider');
+        let $sliderNav = $page.find('.blk-slider-nav');
 
         return {
             $page_html: $page.prop('outerHTML') || $page.prop('innerHTML'),
 
             href: $href,
             title: $page.find('title:eq(0)').text() || document.title,
-            pageTitle: $layout.find('.nk-layout-content-title').html(),
-            pageSubtitle: $layout.find('.nk-layout-content-subtitle').html(),
-            pageTagline: $layout.find('.nk-layout-content-tagline').html(),
+            pageTitle: $layout.find('.blk-layout-content-title').html(),
+            pageSubtitle: $layout.find('.blk-layout-content-subtitle').html(),
+            pageTagline: $layout.find('.blk-layout-content-tagline').html(),
 
             slider: $slider,
             sliderCategory: $slider.attr('data-active-category'),
@@ -63,23 +63,23 @@ function initPages () {
             sliderCategoryTransitionEffect: $slider.attr('data-category-transition-effect'),
             sliderAutoplay: $slider.attr('data-autoplay'),
             sliderForceReload: $slider.attr('data-force-reload'),
-            sliderHideTitles: $slider.hasClass('nk-slider-hide-titles'),
-            sliderNavSlim: $sliderNav.hasClass('nk-slider-nav-slim'),
+            sliderHideTitles: $slider.hasClass('blk-slider-hide-titles'),
+            sliderNavSlim: $sliderNav.hasClass('blk-slider-nav-slim'),
 
-            navTopCenterShow: !$layout.find('.nk-layout-top-center .nk-nav-hide').length,
-            navTopLeftShow: !$layout.find('.nk-layout-top-left-rotated .nk-nav-hide').length,
-            navBottomLeftShow: !$layout.find('.nk-layout-bottom-left .nk-nav-hide').length,
-            navBottomLeftBlogShow: !$layout.find('.nk-layout-bottom-left-blog .nk-nav-hide').length,
-            navBottomCenterShow: !$layout.find('.nk-layout-bottom-center .nk-nav-hide').length,
+            navTopCenterShow: !$layout.find('.blk-layout-top-center .blk-nav-hide').length,
+            navTopLeftShow: !$layout.find('.blk-layout-top-left-rotated .blk-nav-hide').length,
+            navBottomLeftShow: !$layout.find('.blk-layout-bottom-left .blk-nav-hide').length,
+            navBottomLeftBlogShow: !$layout.find('.blk-layout-bottom-left-blog .blk-nav-hide').length,
+            navBottomCenterShow: !$layout.find('.blk-layout-bottom-center .blk-nav-hide').length,
 
             contentHTML: $main.html(),
             contentShow: $main.hasClass('active'),
-            contentLowerTitle: $main.hasClass('nk-main-lower-title'),
+            contentLowerTitle: $main.hasClass('blk-main-lower-title'),
             contentTransitionIn: $main.attr('data-transition-in'),
             contentTransitionOut: $main.attr('data-transition-out'),
             contentCustomColor: $main.attr('data-color') || false,
-            contentCustomBg: $main.next('.nk-main-bg').attr('data-bg') || false,
-            contentCustomBgMobile: $main.next('.nk-main-bg').attr('data-bg-mobile') || false,
+            contentCustomBg: $main.next('.blk-main-bg').attr('data-bg') || false,
+            contentCustomBgMobile: $main.next('.blk-main-bg').attr('data-bg-mobile') || false,
 
             blog: $blog,
             blogShow: $blog.hasClass('active')
@@ -92,7 +92,7 @@ function initPages () {
             $blog.addClass('active');
 
             let posts = [];
-            def.blog.find('> .nk-blog-item a').each(function () {
+            def.blog.find('> .blk-blog-item a').each(function () {
                 posts.push({
                     title: $(this).text(),
                     url: $(this).attr('href')
@@ -129,14 +129,14 @@ function initPages () {
 
         if(def.contentCustomColor) {
             styles.push(
-                '.nk-main {',
+                '.blk-main {',
                 '   color: ' + def.contentCustomColor + ';',
                 '}'
             );
         }
         if(def.contentCustomBg) {
             styles.push(
-                '.nk-main + .nk-main-bg {',
+                '.blk-main + .blk-main-bg {',
                 '   background-color: ' + def.contentCustomBg + ';',
                 '}'
             );
@@ -144,7 +144,7 @@ function initPages () {
         if(def.contentCustomBgMobile) {
             styles.push(
                 '@media (max-width: ' + self.options.mobile + 'px) {',
-                    '.nk-main + .nk-main-bg {',
+                    '.blk-main + .blk-main-bg {',
                     '   background-color: ' + def.contentCustomBgMobile + ';',
                     '}',
                 '}'
@@ -165,7 +165,7 @@ function initPages () {
     function updateContent (animate = false) {
         let $content = $(def.contentHTML);
         let $mainNano = $main.find('.nano-content');
-        let $mainLayout = $main.find('.nk-layout');
+        let $mainLayout = $main.find('.blk-layout');
 
         // animate
         if(animate) {
@@ -173,7 +173,7 @@ function initPages () {
             tween.to($mainLayout, 0.3, {
                 opacity: 0,
                 onComplete () {
-                    $mainLayout.html($content.filter('.nk-layout').html());
+                    $mainLayout.html($content.filter('.blk-layout').html());
                     tween.to($mainLayout, 0.3, {
                         opacity: 1
                     });
@@ -186,7 +186,7 @@ function initPages () {
                 force3D: true,
                 onComplete () {
                     $mainNano.html($content.find('.nano-content').html());
-                    $main[(def.contentLowerTitle ? 'add' : 'remove') + 'Class']('nk-main-lower-title');
+                    $main[(def.contentLowerTitle ? 'add' : 'remove') + 'Class']('blk-main-lower-title');
 
                     updateContentColors();
                     self.initForms();
@@ -210,8 +210,8 @@ function initPages () {
         // no animate
         else {
             $mainNano.html($content.find('.nano-content').html());
-            $mainLayout.html($content.filter('.nk-layout').html());
-            $main[(def.contentLowerTitle ? 'add' : 'remove') + 'Class']('nk-main-lower-title');
+            $mainLayout.html($content.filter('.blk-layout').html());
+            $main[(def.contentLowerTitle ? 'add' : 'remove') + 'Class']('blk-main-lower-title');
 
             updateContentColors();
             self.initForms();
@@ -279,7 +279,7 @@ function initPages () {
 
     // activate / deactivate menu items
     function updateMenuItems () {
-        $('.nk-nav ul:not(.nk-slider-categories) > li > a').each(function () {
+        $('.blk-nav ul:not(.blk-slider-categories) > li > a').each(function () {
             let $li = $(this).parent('li');
             if(this.href === def.href) {
                 $li.addClass('active');
@@ -317,19 +317,19 @@ function initPages () {
             hideTitles: def.sliderHideTitles
         }, () => {
             // change slider navigation style
-            $('.nk-slider-nav')[(def.sliderNavSlim ? 'add' : 'remove') + 'Class']('nk-slider-nav-slim');
+            $('.blk-slider-nav')[(def.sliderNavSlim ? 'add' : 'remove') + 'Class']('blk-slider-nav-slim');
         });
         if(def.blogShow || cur.blogShow) {
             // change slider navigation style
-            $('.nk-slider-nav')[(def.sliderNavSlim ? 'add' : 'remove') + 'Class']('nk-slider-nav-slim');
+            $('.blk-slider-nav')[(def.sliderNavSlim ? 'add' : 'remove') + 'Class']('blk-slider-nav-slim');
         }
 
         // show / hide navigations
-        $layout.find('.nk-layout-top-center .nk-nav')[(def.navTopCenterShow ? 'remove' : 'add') + 'Class']('nk-nav-hide');
-        $layout.find('.nk-layout-top-left-rotated .nk-nav')[(def.navTopLeftShow ? 'remove' : 'add') + 'Class']('nk-nav-hide');
-        $layout.find('.nk-layout-bottom-left .nk-nav')[(def.navBottomLeftShow ? 'remove' : 'add') + 'Class']('nk-nav-hide');
-        $layout.find('.nk-layout-bottom-left-blog .nk-nav')[(def.navBottomLeftBlogShow ? 'remove' : 'add') + 'Class']('nk-nav-hide');
-        $layout.find('.nk-layout-bottom-center .nk-nav')[(def.navBottomCenterShow ? 'remove' : 'add') + 'Class']('nk-nav-hide');
+        $layout.find('.blk-layout-top-center .blk-nav')[(def.navTopCenterShow ? 'remove' : 'add') + 'Class']('blk-nav-hide');
+        $layout.find('.blk-layout-top-left-rotated .blk-nav')[(def.navTopLeftShow ? 'remove' : 'add') + 'Class']('blk-nav-hide');
+        $layout.find('.blk-layout-bottom-left .blk-nav')[(def.navBottomLeftShow ? 'remove' : 'add') + 'Class']('blk-nav-hide');
+        $layout.find('.blk-layout-bottom-left-blog .blk-nav')[(def.navBottomLeftBlogShow ? 'remove' : 'add') + 'Class']('blk-nav-hide');
+        $layout.find('.blk-layout-bottom-center .blk-nav')[(def.navBottomCenterShow ? 'remove' : 'add') + 'Class']('blk-nav-hide');
 
         // show blog
         if(def.blogShow && !cur.blogShow) {

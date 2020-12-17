@@ -1,5 +1,5 @@
 // burger icon
-.nk-icon-burger {
+.blk-icon-burger {
     position: relative;
     display: inline-block;
     width: 26px;
@@ -23,11 +23,11 @@
         transition: .2s color ease, .2s transform ease, .2s margin ease, .2s opacity ease;
     }
 
-    .nk-t-1 {
+    .blk-t-1 {
         margin-top: -6px;
         transform-origin: 0 0;
     }
-    .nk-t-3 {
+    .blk-t-3 {
         margin-top: 4px;
         transform-origin: 0 100%;
     }
@@ -35,15 +35,15 @@
     // active state
     &.active,
     .active > & {
-        .nk-t-2 {
+        .blk-t-2 {
             opacity: 0;
         }
-        .nk-t-1 {
+        .blk-t-1 {
             transform: rotate(45deg);
             margin-top: -6px;
             margin-left: 3px;
         }
-        .nk-t-3 {
+        .blk-t-3 {
             transform: rotate(-45deg);
             margin-top: 5px;
             margin-left: 3px;
@@ -52,7 +52,7 @@
 }
 
 // arrow icons
-.nk-icon-arrow {
+.blk-icon-arrow {
     &-right,
     &-left,
     &-down,
@@ -94,20 +94,20 @@
 
 
 // toggle icons (see in navbar cart icon)
-.nk-icon-toggle {
+.blk-icon-toggle {
     display: inline-block;
     transform-style: preserve-3d;
     transition: .3s transform;
     width: 20px;
     text-align: center;
 
-    .nk-icon-toggle-front {
+    .blk-icon-toggle-front {
         display: inline-block;
         width: 100%;
         backface-visibility: hidden;
         transform: rotateY(0deg);
     }
-    .nk-icon-toggle-back {
+    .blk-icon-toggle-back {
         position: absolute;
         left: 0;
         width: 100%;

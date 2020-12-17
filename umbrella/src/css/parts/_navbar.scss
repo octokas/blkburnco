@@ -1,11 +1,11 @@
-.nk-nav-logo,
-.nk-nav-logo:focus,
-.nk-nav-logo:hover,
-.nk-nav-logo:active {
+.blk-nav-logo,
+.blk-nav-logo:focus,
+.blk-nav-logo:hover,
+.blk-nav-logo:active {
     text-decoration: none;
 }
 
-.nk-nav {
+.blk-nav {
     position: relative;
     font-weight: bold;
     line-height: 1;
@@ -14,7 +14,7 @@
     transition: .4s opacity ease, .3s visibility ease;
 
     // hide
-    &.nk-nav-hide {
+    &.blk-nav-hide {
         opacity: 0;
         visibility: hidden;
     }
@@ -55,7 +55,7 @@
 
 
 /* Navbar */
-.nk-navbar {
+.blk-navbar {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -68,7 +68,7 @@
     width: 50%;
     margin-right: -50%;
 
-    + .nk-navbar-bg {
+    + .blk-navbar-bg {
         position: fixed;
         top: -100%;
         right: 0;
@@ -77,7 +77,7 @@
         background-color: $color_dark;
         z-index: $z_navbar_bg;
 
-        .nk-navbar-image {
+        .blk-navbar-image {
             position: absolute;
             top: 0;
             left: 0;
@@ -90,7 +90,7 @@
     }
 
     // table content
-    .nk-nav-table {
+    .blk-nav-table {
         display: table;
         width: 100%;
         height: 100%;
@@ -100,13 +100,13 @@
             vertical-align: middle;
         }
 
-        > .nk-nav-row {
+        > .blk-nav-row {
             display: table-row;
         }
-        > .nk-nav-row-full {
+        > .blk-nav-row-full {
             height: 100%;
         }
-        > .nk-nav-row-center > * {
+        > .blk-nav-row-center > * {
             display: table-cell;
             vertical-align: middle;
         }
@@ -118,7 +118,7 @@
         height: 100%;
         overflow-y: auto;
     }
-    .nk-nav {
+    .blk-nav {
         padding-right: 8px;
 
         ul {
@@ -157,7 +157,7 @@
 
     // tablet
     @media #{$media_smaller_md} {
-        .nk-nav {
+        .blk-nav {
             ul {
                 display: table;
                 margin: 0 auto;
@@ -173,16 +173,16 @@
         padding-bottom: 0;
         z-index: $z_navbar_mobile;
 
-        + .nk-navbar-bg {
+        + .blk-navbar-bg {
             width: 100%;
             z-index: $z_navbar_mobile_bg;
         }
 
-        .nk-nav {
+        .blk-nav {
             padding-right: 0;
         }
 
-        .nk-nav li {
+        .blk-nav li {
             font-size: 30px;
 
             + li {

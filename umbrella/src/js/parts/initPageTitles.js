@@ -7,16 +7,16 @@ import { $, tween } from "./_utility";
  -------------------------------------------------------------------*/
 function initPageTitles () {
     const self = this;
-    let $layout = $('.nk-layout:eq(0)');
-    let $title = $layout.find('.nk-layout-content-title');
-    let $subtitle = $layout.find('.nk-layout-content-subtitle');
-    let $tagline = $layout.find('.nk-layout-content-tagline');
-    let $main = $('.nk-main:eq(0)');
+    let $layout = $('.blk-layout:eq(0)');
+    let $title = $layout.find('.blk-layout-content-title');
+    let $subtitle = $layout.find('.blk-layout-content-subtitle');
+    let $tagline = $layout.find('.blk-layout-content-tagline');
+    let $main = $('.blk-main:eq(0)');
 
     // create shadow items for transitions
-    let $titleShadow = $('<h4>').css('display', 'none').addClass('nk-layout-content-title').insertAfter($title);
-    let $subtitleShadow = $('<h4>').css('display', 'none').addClass('nk-layout-content-subtitle').insertAfter($subtitle);
-    let $taglineShadow = $('<div>').css('display', 'none').addClass('nk-layout-content-tagline').insertAfter($tagline);
+    let $titleShadow = $('<h4>').css('display', 'none').addClass('blk-layout-content-title').insertAfter($title);
+    let $subtitleShadow = $('<h4>').css('display', 'none').addClass('blk-layout-content-subtitle').insertAfter($subtitle);
+    let $taglineShadow = $('<div>').css('display', 'none').addClass('blk-layout-content-tagline').insertAfter($tagline);
 
     // show title
     // effects: left, right, fade

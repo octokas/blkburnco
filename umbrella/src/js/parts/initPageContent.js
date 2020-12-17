@@ -7,9 +7,9 @@ import { $, tween } from "./_utility";
  -------------------------------------------------------------------*/
 function initPageContent () {
     const self = this;
-    let $navbar = $('.nk-navbar');
-    let $main = $('.nk-main');
-    let $mainBg = $main.next('.nk-main-bg');
+    let $navbar = $('.blk-navbar');
+    let $main = $('.blk-main');
+    let $mainBg = $main.next('.blk-main-bg');
     let $mainAndBg = $main.add($mainBg);
     let busy = 0;
 

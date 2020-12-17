@@ -5,7 +5,7 @@ $preloader_color_inner: $color_main;
 $preloader_size: 35px;
 $preloader_size_inner: $preloader_size * 0.4;
 $preloader_weight: 3px;
-.nk-spinner {
+.blk-spinner {
     position: relative;
     width: $preloader_size;
     height: $preloader_size;
@@ -19,7 +19,7 @@ $preloader_weight: 3px;
         height: $preloader_size_inner;
         overflow: hidden;
         transform-origin: $preloader_size / 2 $preloader_size / 2;
-        animation: nk-spinner 0.6s infinite linear;
+        animation: blk-spinner 0.6s infinite linear;
 
         &:after {
             content: '';
@@ -31,11 +31,11 @@ $preloader_weight: 3px;
         }
     }
 }
-@keyframes nk-spinner {
+@keyframes blk-spinner {
     100% { transform: rotate(360deg) }
 }
 
 // spinner inside slider navigation
-.nk-slider-nav .nk-spinner {
+.blk-slider-nav .blk-spinner {
     top: 9px;
 }

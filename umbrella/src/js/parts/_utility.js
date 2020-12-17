@@ -16,7 +16,7 @@ const isTouch = 'ontouchstart' in window || window.DocumentTouch && document ins
 
 // check if current page have Umbrella layout
 function isUmbrellaLayout ($context = $doc) {
-    return $context.find('.nk-main, nk-layout, .nk-blog').length;
+    return $context.find('.blk-main, blk-layout, .blk-blog').length;
 }
 
 // add 'is-mobile' or 'is-desktop' classname to html tag
@@ -134,14 +134,14 @@ let bodyOverflowEnabled;
 let isBodyOverflowing;
 let scrollbarWidth;
 let originalBodyPadding;
-let $headerContent = $('.nk-header > *');
+let $headerContent = $('.blk-header > *');
 function isBodyOverflowed () {
     return bodyOverflowEnabled;
 }
 function bodyGetScrollbarWidth () {
     // thx d.walsh
     let scrollDiv = document.createElement('div');
-    scrollDiv.className = 'nk-body-scrollbar-measure';
+    scrollDiv.className = 'blk-body-scrollbar-measure';
     $body[0].appendChild(scrollDiv);
     let result = scrollDiv.offsetWidth - scrollDiv.clientWidth;
     $body[0].removeChild(scrollDiv);

@@ -1,4 +1,4 @@
-.nk-preloader {
+.blk-preloader {
     position: fixed;
     display: none;
     top: 0;
@@ -8,7 +8,7 @@
     z-index: 3000;
 }
 
-.nk-loading-spinner-place {
+.blk-loading-spinner-place {
     display: inline-block;
     vertical-align: middle;
     margin: 0 30px;
@@ -19,8 +19,8 @@
 $loadingSpinnerSize: 80px;
 $loadingSpinnerSizeInner: $loadingSpinnerSize * 0.35;
 $loadingSpinnerWeight: 2px;
-.nk-loading-spinner,
-.nk-loading-spinner-light {
+.blk-loading-spinner,
+.blk-loading-spinner-light {
     position: relative;
     display: inline-block;
     width: $loadingSpinnerSize;
@@ -35,7 +35,7 @@ $loadingSpinnerWeight: 2px;
         height: $loadingSpinnerSizeInner;
         overflow: hidden;
         transform-origin: $loadingSpinnerSize / 2 $loadingSpinnerSize / 2;
-        animation: nk-loading-spinner 0.7s infinite linear;
+        animation: blk-loading-spinner 0.7s infinite linear;
 
         &:after {
             content: '';
@@ -47,12 +47,12 @@ $loadingSpinnerWeight: 2px;
         }
     }
 }
-.nk-loading-spinner-light {
+.blk-loading-spinner-light {
     box-shadow: inset 0 0 0 $loadingSpinnerWeight $color_text;
     i:after {
         box-shadow: inset 0 0 0 $loadingSpinnerWeight rgba($color_dark, 0.8);
     }
 }
-@keyframes nk-loading-spinner {
+@keyframes blk-loading-spinner {
     100% { transform: rotate(360deg) }
 }

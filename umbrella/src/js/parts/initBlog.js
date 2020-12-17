@@ -9,14 +9,14 @@ $.fn.reverse = [].reverse;
 
 -------------------------------------------------------------------*/
 function initBlog () {
-    let $blog = $('.nk-blog');
-    let $navbar = $('.nk-navbar');
-    let $sliderNav = $('.nk-slider-nav');
+    let $blog = $('.blk-blog');
+    let $navbar = $('.blk-navbar');
+    let $sliderNav = $('.blk-slider-nav');
     let $sliderNavItemsCont = $sliderNav.children('ul');
-    let $renderedBlog = $('<div class="nk-blog-rendered">').hide().appendTo($blog);
+    let $renderedBlog = $('<div class="blk-blog-rendered">').hide().appendTo($blog);
         // insert posts containers
         for(let k = 0; k < 3; k++) {
-            $renderedBlog.append(`<div class="nk-blog-item"><h2><a href=""></a></h2></div>`);
+            $renderedBlog.append(`<div class="blk-blog-item"><h2><a href=""></a></h2></div>`);
         }
     let blogList = [];
     let self = this;
@@ -66,7 +66,7 @@ function initBlog () {
             return;
         }
         let result = [];
-        $blog.find('> .nk-blog-item a').each(function () {
+        $blog.find('> .blk-blog-item a').each(function () {
             result.push({
                 title: $(this).text(),
                 url: $(this).attr('href')
@@ -87,7 +87,7 @@ function initBlog () {
                 callback();
             }
         }
-        $renderedBlog.find('.nk-blog-item').each(function () {
+        $renderedBlog.find('.blk-blog-item').each(function () {
             let $this = $(this);
             let $link = $this.find('a');
             let i = $this.index();
@@ -238,9 +238,9 @@ function initBlog () {
         isShown = 1;
 
         // clear items
-        let $items = $renderedBlog.find('.nk-blog-item:eq(0), .nk-blog-item:eq(1)');
-        let $hideItems = $renderedBlog.find('.nk-blog-item > *');
-        $renderedBlog.find('.nk-blog-item a').html('');
+        let $items = $renderedBlog.find('.blk-blog-item:eq(0), .blk-blog-item:eq(1)');
+        let $hideItems = $renderedBlog.find('.blk-blog-item > *');
+        $renderedBlog.find('.blk-blog-item a').html('');
 
         // stop previous tween
         tween.killTweensOf($items);
@@ -289,8 +289,8 @@ function initBlog () {
         isShown = 0;
 
         // clear items
-        let $items = $renderedBlog.find('.nk-blog-item:eq(0), .nk-blog-item:eq(1)');
-        let $hideItems = $renderedBlog.find('.nk-blog-item > *');
+        let $items = $renderedBlog.find('.blk-blog-item:eq(0), .blk-blog-item:eq(1)');
+        let $hideItems = $renderedBlog.find('.blk-blog-item > *');
 
         // stop previous tween
         tween.killTweensOf($items);
@@ -332,12 +332,12 @@ function initBlog () {
     }
 
     // on click nav item
-    $sliderNav.on('click', '.nk-slider-nav-next', function () {
+    $sliderNav.on('click', '.blk-slider-nav-next', function () {
         if(self.getDefaultPageData().blogShow) {
             self.showNextPosts();
         }
     });
-    $sliderNav.on('click', '.nk-slider-nav-prev', function () {
+    $sliderNav.on('click', '.blk-slider-nav-prev', function () {
         if(self.getDefaultPageData().blogShow) {
             self.showPrevPosts();
         }
@@ -354,7 +354,7 @@ function initBlog () {
     if (wheelEvent) {
         $wnd.on(wheelEvent, (e) => {
             // check if delta >= 2 and mouse under slider
-            if(!self.getDefaultPageData().blogShow || Math.abs(e.originalEvent.deltaY) < 2 || !$(e.target).parents('.nk-layout, .nk-blog').length) {
+            if(!self.getDefaultPageData().blogShow || Math.abs(e.originalEvent.deltaY) < 2 || !$(e.target).parents('.blk-layout, .blk-blog').length) {
                 return;
             }
 
@@ -375,12 +375,12 @@ function initBlog () {
     });
     mc.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
     mc.on('swipeup swipeleft', function(e) {
-        if(self.getDefaultPageData().blogShow && $(e.target).parents('.nk-layout, .nk-blog').length) {
+        if(self.getDefaultPageData().blogShow && $(e.target).parents('.blk-layout, .blk-blog').length) {
             self.showNextPosts();
         }
     });
     mc.on('swipedown swiperight', function(e) {
-        if(self.getDefaultPageData().blogShow && $(e.target).parents('.nk-layout, .nk-blog').length) {
+        if(self.getDefaultPageData().blogShow && $(e.target).parents('.blk-layout, .blk-blog').length) {
             self.showPrevPosts();
         }
     });

@@ -12,7 +12,7 @@
 
 
 /* Buttons */
-.nk-form-btn {
+.blk-form-btn {
     display: inline-block;
     background: none;
     border: none;
@@ -63,7 +63,7 @@
 select.form-control {
     padding: 6px 20px;
 }
-.nk-input-group-btn {
+.blk-input-group-btn {
     display: table-cell;
     position: relative;
     white-space: nowrap;
@@ -72,7 +72,7 @@ select.form-control {
 }
 
 /* Validation */
-div.nk-error {
+div.blk-error {
     font-weight: normal;
     background-color: transparent;
     color: $color_danger;
@@ -80,17 +80,17 @@ div.nk-error {
     margin: 5px 0;
     z-index: 1;
 }
-.form-control.nk-error,
-.nk-form-style-1 .form-control.nk-error {
+.form-control.blk-error,
+.blk-form-style-1 .form-control.blk-error {
     border-bottom: 1px solid $color_danger;
 }
 
-.nk-form-response-success {
+.blk-form-response-success {
     display: none;
     color: $color_success;
     margin-bottom: 10px;
 }
-.nk-form-response-error {
+.blk-form-response-error {
     display: none;
     color: $color_danger;
     margin-bottom: 10px;

@@ -6,9 +6,9 @@ import { $, $body, wndW } from "./_utility";
  type = page, blog
 
  -------------------------------------------------------------------*/
-let $spinnerPlace = $('.nk-loading-spinner-place');
-let $preloader = $('<div class="nk-preloader">').appendTo($body);
-let spinner = '<div class="nk-spinner"><span></span></div>';
+let $spinnerPlace = $('.blk-loading-spinner-place');
+let $preloader = $('<div class="blk-preloader">').appendTo($body);
+let spinner = '<div class="blk-spinner"><span></span></div>';
 let blogSpinnerInSpinnerPlace = 0;
 
 function runPreloader (type = 'page') {

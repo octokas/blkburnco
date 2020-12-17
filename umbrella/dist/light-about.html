@@ -50,12 +50,12 @@
 
         Contains fixed page elements like slider, navigation, logo
     -->
-    <div class="nk-layout">
+    <div class="blk-layout">
         <!--
             Slider
 
             Additional Classes:
-                .nk-slider-hide-titles - hide titles after slide
+                .blk-slider-hide-titles - hide titles after slide
 
             Additional Classes Per Slide:
                 .active - active slide on startup
@@ -81,58 +81,58 @@
                 Example: data-categories="*"
         -->
 
-        <div class="nk-slider" data-active-category="Nature" data-transition-speed="500" data-transition-effect="fade" data-category-transition-speed="500" data-category-transition-effect="top" data-autoplay="false" data-force-reload="false">
-            <div class="nk-slider-item active" data-categories="Nature" data-background-position="50% 20%">
+        <div class="blk-slider" data-active-category="Nature" data-transition-speed="500" data-transition-effect="fade" data-category-transition-speed="500" data-category-transition-effect="top" data-autoplay="false" data-force-reload="false">
+            <div class="blk-slider-item active" data-categories="Nature" data-background-position="50% 20%">
                 <img src="assets/images/slide-1-light.jpg" alt="">
             </div>
-            <div class="nk-slider-item" data-categories="Nature" data-background-position="50% 2%">
+            <div class="blk-slider-item" data-categories="Nature" data-background-position="50% 2%">
                 <img src="assets/images/slide-2-light.jpg" alt="">
             </div>
-            <div class="nk-slider-item" data-categories="Nature" data-background-position="50% 2%">
+            <div class="blk-slider-item" data-categories="Nature" data-background-position="50% 2%">
                 <img src="assets/images/slide-3-light.jpg" alt="">
             </div>
-            <div class="nk-slider-item" data-categories="Nature" data-background-position="50% 10%">
+            <div class="blk-slider-item" data-categories="Nature" data-background-position="50% 10%">
                 <img src="assets/images/slide-4-light.jpg" alt="">
             </div>
-            <div class="nk-slider-item" data-categories="Nature" data-background-position="50% 20%">
+            <div class="blk-slider-item" data-categories="Nature" data-background-position="50% 20%">
                 <img src="assets/images/slide-5-light.jpg" alt="">
             </div>
-            <div class="nk-slider-item" data-categories="Nature" data-background-position="50% 10%">
+            <div class="blk-slider-item" data-categories="Nature" data-background-position="50% 10%">
                 <img src="assets/images/slide-6-light.jpg" alt="">
             </div>
-            <div class="nk-slider-item" data-categories="Nature" data-background-position="50% 5%">
+            <div class="blk-slider-item" data-categories="Nature" data-background-position="50% 5%">
                 <img src="assets/images/slide-7-light.jpg" alt="">
             </div>
         </div>
 
 
         <!-- Top Center -->
-        <div class="nk-layout-top-center">
-            <nav class="nk-nav nk-nav-hide">
-                <ul class="nk-slider-categories">
+        <div class="blk-layout-top-center">
+            <nav class="blk-nav blk-nav-hide">
+                <ul class="blk-slider-categories">
                     <!-- Here will be inserted available slider categories -->
                 </ul>
             </nav>
         </div>
 
         <!-- Bottom Right -->
-        <div class="nk-layout-bottom-right">
+        <div class="blk-layout-bottom-right">
             <!--
                 START: Slider Navigation
 
                 Additional Classes:
-                    .nk-slider-nav-slim
+                    .blk-slider-nav-slim
             -->
-            <div class="nk-slider-nav">
+            <div class="blk-slider-nav">
                 <ul>
                     <!-- Here will be inserted slider bullets -->
                 </ul>
                 <div>
-                    <div class="nk-slider-nav-prev">
-                        <span class="nk-icon-arrow-up"></span>
+                    <div class="blk-slider-nav-prev">
+                        <span class="blk-icon-arrow-up"></span>
                     </div>
-                    <div class="nk-slider-nav-next">
-                        <span class="nk-icon-arrow-down"></span>
+                    <div class="blk-slider-nav-next">
+                        <span class="blk-icon-arrow-down"></span>
                     </div>
                 </div>
             </div>
@@ -140,19 +140,19 @@
         </div>
 
         <!-- Top Left -->
-        <div class="nk-layout-top-left">
+        <div class="blk-layout-top-left">
 
-            <a href="light-index.html" class="nk-nav-logo">
+            <a href="light-index.html" class="blk-nav-logo">
                 <img src="assets/images/logo.png" alt="" width="133" data-logo-dark="assets/images/logo-dark.png">
             </a>
 
 
             <!-- There will be inserted loading spinner when ajax -->
-            <div class="nk-loading-spinner-place"></div>
+            <div class="blk-loading-spinner-place"></div>
 
             <!-- Top Left Rotated -->
-            <div class="nk-layout-top-left-rotated">
-                <nav class="nk-nav">
+            <div class="blk-layout-top-left-rotated">
+                <nav class="blk-nav">
                     <ul>
 
                     </ul>
@@ -161,19 +161,19 @@
         </div>
 
         <!-- Top Right -->
-        <div class="nk-layout-top-right">
-            <span class="nk-nav-toggle">
-                <span class="nk-icon-burger">
-                    <span class="nk-t-1"></span>
-                    <span class="nk-t-2"></span>
-                    <span class="nk-t-3"></span>
+        <div class="blk-layout-top-right">
+            <span class="blk-nav-toggle">
+                <span class="blk-icon-burger">
+                    <span class="blk-t-1"></span>
+                    <span class="blk-t-2"></span>
+                    <span class="blk-t-3"></span>
                 </span>
             </span>
         </div>
 
         <!-- Bottom Left -->
-        <div class="nk-layout-bottom-left">
-            <nav class="nk-nav">
+        <div class="blk-layout-bottom-left">
+            <nav class="blk-nav">
                 <ul>
                     <li>
                         <a href="light-blog.html">Blog</a>
@@ -183,8 +183,8 @@
         </div>
 
         <!-- Bottom Left Blog -->
-        <div class="nk-layout-bottom-left-blog">
-            <nav class="nk-nav nk-nav-hide">
+        <div class="blk-layout-bottom-left-blog">
+            <nav class="blk-nav blk-nav-hide">
                 <ul>
                     <li class="hover"><a href="./light-index.html">Close</a></li>
                 </ul>
@@ -192,8 +192,8 @@
         </div>
 
         <!-- Bottom Center -->
-        <div class="nk-layout-bottom-center">
-            <nav class="nk-nav">
+        <div class="blk-layout-bottom-center">
+            <nav class="blk-nav">
                 <ul>
                     <li>
                         <a href="mailto:info@umbrella.com">info@umbrella.com</a>
@@ -203,21 +203,21 @@
         </div>
 
         <!-- Titles -->
-        <div class="nk-layout-content-tagline"></div>
-        <h3 class="nk-layout-content-title">About.</h3>
-        <h3 class="nk-layout-content-subtitle"></h3>
+        <div class="blk-layout-content-tagline"></div>
+        <h3 class="blk-layout-content-title">About.</h3>
+        <h3 class="blk-layout-content-subtitle"></h3>
     </div>
     <!-- END: Fixed Layout -->
 
 
 
     <!-- START: Navbar -->
-    <div class="nk-navbar" id="nk-navbar">
+    <div class="blk-navbar" id="blk-navbar">
         <div class="nano">
             <div class="nano-content">
-                <div class="nk-nav-table">
-                    <div class="nk-nav-row nk-nav-row-center">
-                        <nav class="nk-nav">
+                <div class="blk-nav-table">
+                    <div class="blk-nav-row blk-nav-row-center">
+                        <nav class="blk-nav">
                             <ul>
                                 <li>
                                     <a href="light-blog.html">
@@ -246,8 +246,8 @@
             </div>
         </div>
     </div>
-    <div class="nk-navbar-bg">
-        <div class="nk-navbar-image hidden-lg-up" style="background-image: url('assets/images/bg-menu.jpg');"></div>
+    <div class="blk-navbar-bg">
+        <div class="blk-navbar-image hidden-lg-up" style="background-image: url('assets/images/bg-menu.jpg');"></div>
     </div>
     <!-- END: Navbar -->
 
@@ -258,7 +258,7 @@
 
         Additional Classes:
             .active
-            .nk-main-lower-title - title will be visible under content text
+            .blk-main-lower-title - title will be visible under content text
 
         Additional Attributes:
             data-transition-speed - transition speed in milliseconds
@@ -266,16 +266,16 @@
             data-transition-out - top, bottom, right. Hide transition type
 
         Note:
-            If you don't want to show content, just remove all content inside .nano-content and inside .nk-layout and remove .active class, but don't remove this block completely
+            If you don't want to show content, just remove all content inside .nano-content and inside .blk-layout and remove .active class, but don't remove this block completely
     -->
-    <div class="nk-main active" id="nk-main" data-transition-speed="500" data-transition-in="bottom" data-transition-out="right">
+    <div class="blk-main active" id="blk-main" data-transition-speed="500" data-transition-in="bottom" data-transition-out="right">
         <div class="nano">
             <div class="nano-content">
-                <div class="nk-vertical-top">
+                <div class="blk-vertical-top">
                     <div>
 
-                        <div class="nk-tabs">
-                            <div class="nk-item-offset">
+                        <div class="blk-tabs">
+                            <div class="blk-item-offset">
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item">
                                         <a class="nav-link active" href="#tabs-1-1" role="tab" data-toggle="tab">History</a>
@@ -293,10 +293,10 @@
                             </div>
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane fade in active" id="tabs-1-1">
-                                    <div class="nk-gap-3 mb-9"></div>
+                                    <div class="blk-gap-3 mb-9"></div>
 
                                     <h2 class="text-main">Umbrella. is an international fashion brand that represents style and quality since 1968. Founded in New York.</h2>
-                                    <div class="nk-gap-1"></div>
+                                    <div class="blk-gap-1"></div>
 
                                     <p>More customers are embracing basics anddrifting back to classic styles from one of the most famous jean retailers in the world.</p>
 
@@ -305,7 +305,7 @@
                                     <p>Although many entrepreneurs who establish fashion companies are professional designers, this is not a pre-requisite. Regardless of professional background, there are a few things to know when starting a fashion company.</p>
                                 </div>
                                 <div role="tabpanel" class="tab-pane fade" id="tabs-1-2">
-                                    <div class="nk-gap-3 mb-9"></div>
+                                    <div class="blk-gap-3 mb-9"></div>
 
                                     <div class="row vertical-gap multi-columns-row">
                                         <div class="col-sm-6">
@@ -335,7 +335,7 @@
                                     </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane fade" id="tabs-1-3">
-                                    <div class="nk-gap-3 mb-9"></div>
+                                    <div class="blk-gap-3 mb-9"></div>
 
                                     <p><strong>Service:</strong> Every customer deserves a great shopping experience, every time. Our team’s commitment to delivering the highest levels of service is what makes us distinctive.</p>
 
@@ -344,7 +344,7 @@
                                     <p><strong>Passion for Winning:</strong> We love what we do, and want to be the best at it. We strive for success by always aiming higher – not just meeting our objectives, but exceeding expectations as well.</p>
                                 </div>
                                 <div role="tabpanel" class="tab-pane fade" id="tabs-1-4">
-                                    <div class="nk-gap-3 mb-9"></div>
+                                    <div class="blk-gap-3 mb-9"></div>
 
                                     <p>Our goal is to be the employer, partner and retail destination of choice in the Asia & Middle East. We will achieve this by building a creative and inclusive community with a culture of knowledge and innovation.</p>
 
@@ -360,13 +360,13 @@
             </div>
         </div>
         <!-- Bottom Right Info -->
-        <div class="nk-layout">
-            <div class="nk-layout-bottom-right-rotated">
+        <div class="blk-layout">
+            <div class="blk-layout-bottom-right-rotated">
                 <strong class="text-main">+1 35 1481 527</strong>
             </div>
         </div>
     </div>
-    <div class="nk-main-bg"></div>
+    <div class="blk-main-bg"></div>
     <!-- END: Main Page Content -->
 
     <!--
@@ -378,7 +378,7 @@
         Note:
             If you don't want to show blog, just remove all content inside and remove .active class, but don't remove this block completely
     -->
-    <div class="nk-blog" id="nk-blog">
+    <div class="blk-blog" id="blk-blog">
 
     </div>
     <!-- END: Blog -->

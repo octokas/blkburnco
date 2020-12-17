@@ -24,8 +24,8 @@ function getImageLightness(canvas, ctx, x, y, w, h) {
 
  -------------------------------------------------------------------*/
 let timeout;
-let $targets = $('.nk-layout').find('.nk-layout-top-left, .nk-layout-top-left-rotated, .nk-layout-top-center, .nk-layout-top-right, .nk-layout-bottom-left, .nk-layout-bottom-right, .nk-layout-bottom-center, .nk-layout-content-subtitle, .nk-layout-content-tagline');
-let $logo = $('.nk-layout [data-logo-dark]');
+let $targets = $('.blk-layout').find('.blk-layout-top-left, .blk-layout-top-left-rotated, .blk-layout-top-center, .blk-layout-top-right, .blk-layout-bottom-left, .blk-layout-bottom-right, .blk-layout-bottom-center, .blk-layout-content-subtitle, .blk-layout-content-tagline');
+let $logo = $('.blk-layout [data-logo-dark]');
     $logo.attr('data-logo-light', $logo.attr('src'));
 if(isUmbrellaLayout()) {
     BackgroundCheck.init({
