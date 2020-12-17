@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<!--
+  Name: Umbrella. - Brad's Portfolio
+  Version: 1.16.13
+  Author: blkburn, Kaska
+  Website: https://kaska.rocks
+  Copyright 2020.
+-->
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="blkburn">
+    <title>Umbrella. | Article.</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.jpg">
+
+    <!-- START: Styles -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300i,400,700" rel="stylesheet">
+
+    <!-- Bootstrap Custom -->
+    <link rel="stylesheet" href="assets/css/bootstrap-custom.min.css">
+
+    <!-- Umbrella -->
+    <link rel="stylesheet" href="assets/css/umbrella.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- END: Styles -->
+
+    <!-- jQuery -->
+    <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+
+
+
+</head>
+
+
+
+<body>
+
+    <!--
+        START: Fixed Layout
+
+        Contains fixed page elements like slider, navigation, logo
+    -->
+    <div class="nk-layout">
+        <!--
+            Slider
+
+            Additional Classes:
+                .nk-slider-hide-titles - hide titles after slide
+
+            Additional Classes Per Slide:
+                .active - active slide on startup
+
+            Additional Attributes:
+                data-active-category - current active category
+                data-autoplay - autoplay delay in milliseconds
+                data-transition-speed - transition speed in milliseconds
+                data-transition-effect - transition effect for slides. Available effects: fade, divide, top, left, right, bottom
+                data-category-transition-speed - transition speed in milliseconds after category change
+                data-category-transition-effect - transition effect for slides after category change
+                data-force-reload - reload slider on ajax page request. Required values like in data-transition-effect attribute.
+
+            Additional Attributes Per Slide:
+                data-categories - list with categories
+                data-background-position - position for slide image. By default "50% 50%"
+
+            Notes:
+                If you want add more then 1 category per slide, type it with | divider.
+                Example: data-categories="Fashion|Portraits|Nature"
+
+                If you want to add slide in all categories, use *
+                Example: data-categories="*"
+        -->
+
+        <div class="nk-slider" data-active-category="Fashion" data-transition-speed="500" data-transition-effect="fade" data-category-transition-speed="500" data-category-transition-effect="top" data-autoplay="false" data-force-reload="false">
+            <div class="nk-slider-item active" data-categories="Fashion" data-background-position="50% 20%">
+                <img src="assets/images/slide-1.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 10%">
+                <img src="assets/images/slide-2.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Nature" data-background-position="50% 30%">
+                <img src="assets/images/slide-11.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 10%">
+                <img src="assets/images/slide-4.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 50%">
+                <img src="assets/images/slide-5.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Portraits" data-background-position="50% 50%">
+                <img src="assets/images/slide-6.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 5%">
+                <img src="assets/images/slide-7.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 20%">
+                <img src="assets/images/slide-8.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 5%">
+                <img src="assets/images/slide-9.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Portraits" data-background-position="50% 20%">
+                <img src="assets/images/slide-10.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Nature" data-background-position="50% 5%">
+                <img src="assets/images/slide-3.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Nature" data-background-position="50% 5%">
+                <img src="assets/images/slide-12.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Nature" data-background-position="50% 5%">
+                <img src="assets/images/slide-13.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 5%">
+                <img src="assets/images/slide-14.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 5%">
+                <img src="assets/images/slide-15.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Portraits" data-background-position="50% 5%">
+                <img src="assets/images/slide-16.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Portraits" data-background-position="50% 5%">
+                <img src="assets/images/slide-17.jpg" alt="">
+            </div>
+        </div>
+
+
+        <!-- Top Center -->
+        <div class="nk-layout-top-center">
+            <nav class="nk-nav">
+                <ul class="nk-slider-categories">
+                    <!-- Here will be inserted available slider categories -->
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Bottom Right -->
+        <div class="nk-layout-bottom-right">
+            <!--
+                START: Slider Navigation
+
+                Additional Classes:
+                    .nk-slider-nav-slim
+            -->
+            <div class="nk-slider-nav">
+                <ul>
+                    <!-- Here will be inserted slider bullets -->
+                </ul>
+                <div>
+                    <div class="nk-slider-nav-prev">
+                        <span class="nk-icon-arrow-up"></span>
+                    </div>
+                    <div class="nk-slider-nav-next">
+                        <span class="nk-icon-arrow-down"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- END: Slider Navigation -->
+        </div>
+
+        <!-- Top Left -->
+        <div class="nk-layout-top-left">
+
+            <a href="./" class="nk-nav-logo">
+                <img src="assets/images/logo.png" alt="" width="133" data-logo-dark="assets/images/logo-dark.png">
+            </a>
+
+
+            <!-- There will be inserted loading spinner when ajax -->
+            <div class="nk-loading-spinner-place"></div>
+
+            <!-- Top Left Rotated -->
+            <div class="nk-layout-top-left-rotated">
+                <nav class="nk-nav">
+                    <ul>
+                        <li>
+                            <a href="studio.html">Studio</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Top Right -->
+        <div class="nk-layout-top-right">
+            <span class="nk-nav-toggle">
+                <span class="nk-icon-burger">
+                    <span class="nk-t-1"></span>
+                    <span class="nk-t-2"></span>
+                    <span class="nk-t-3"></span>
+                </span>
+            </span>
+        </div>
+
+        <!-- Bottom Left -->
+        <div class="nk-layout-bottom-left">
+            <nav class="nk-nav">
+                <ul>
+                    <li>
+                        <a href="blog.html">Blog</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Bottom Left Blog -->
+        <div class="nk-layout-bottom-left-blog">
+            <nav class="nk-nav nk-nav-hide">
+                <ul>
+                    <li class="hover"><a href="./">Close</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Bottom Center -->
+        <div class="nk-layout-bottom-center">
+            <nav class="nk-nav">
+                <ul>
+                    <li>
+                        <a href="mailto:info@umbrella.com">info@umbrella.com</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Titles -->
+        <div class="nk-layout-content-tagline"></div>
+        <h3 class="nk-layout-content-title"></h3>
+        <h3 class="nk-layout-content-subtitle"></h3>
+    </div>
+    <!-- END: Fixed Layout -->
+
+
+
+    <!-- START: Navbar -->
+    <div class="nk-navbar" id="nk-navbar">
+        <div class="nano">
+            <div class="nano-content">
+                <div class="nk-nav-table">
+                    <div class="nk-nav-row nk-nav-row-center">
+                        <nav class="nk-nav">
+                            <ul>
+                                <li>
+                                    <a href="blog.html">
+                <span>Blog</span>
+            </a>
+                                </li>
+                                <li>
+                                    <a href="about.html">
+                <span>About</span>
+            </a>
+                                </li>
+                                <li>
+                                    <a href="team.html">
+                <span>Team</span>
+            </a>
+                                </li>
+                                <li>
+                                    <a href="contact.html">
+                <span>Contact Us</span>
+            </a>
+                                </li>
+                                <li>
+                                    <a href="documentation.html">
+                <span>Help</span>
+            </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nk-navbar-bg">
+        <div class="nk-navbar-image hidden-lg-up" style="background-image: url('assets/images/bg-menu.jpg');"></div>
+    </div>
+    <!-- END: Navbar -->
+
+
+
+    <!--
+        START: Main Page Content
+
+        Additional Classes:
+            .active
+            .nk-main-lower-title - title will be visible under content text
+
+        Additional Attributes:
+            data-transition-speed - transition speed in milliseconds
+            data-transition-in - top, bottom, right. Show transition type
+            data-transition-out - top, bottom, right. Hide transition type
+
+        Note:
+            If you don't want to show content, just remove all content inside .nano-content and inside .nk-layout and remove .active class, but don't remove this block completely
+    -->
+    <div class="nk-main active" id="nk-main" data-transition-speed="500" data-transition-in="bottom" data-transition-out="right">
+        <div class="nano">
+            <div class="nano-content">
+                <div class="nk-vertical-top">
+                    <div>
+
+                        <div class="nk-article-date nk-item-offset"><strong>18 September 2016</strong></div>
+                        <div class="nk-gap-3 mb-9"></div>
+                        <h1 class="nk-article-title h2">From delicately embroidered broderie anglaise dresses to darling corduroy dungarees, the new collection</h1>
+
+                        <p>When starting a fashion company, an entrepreneur must identify his target customer. He must learn their gender and age. He must determine where and how often these individuals shop. He must also gain an understanding of what trends are currently popular with the demographic.</p>
+
+                        <blockquote class="nk-blockquote">
+                            <p>This knowledge will allow him to make business decisions based upon the tastes and buying patterns of those to whom he will be marketing his product. Likewise, affluent middle-aged aged men.</p>
+                            <cite>Sandra Lambert</cite>
+                        </blockquote>
+
+                        <h4>Marketing And Sales Plan</h4>
+                        <p>While a fashion company with substantial financial resources may initiate a large-scale advertisement campaign, a smaller business may employee a grassroots approach consisting of postcard distribution and word of mouth. In addition to marketing, an entrepreneur must identify outlets for his products to be purchased. The greatest public relations campaign is for naught if customers cannot buy the products.</p>
+
+                        <h4>Startup Costs</h4>
+
+                        <img src="assets/images/blog-article.jpg" alt="From delicately embroidered broderie anglaise dresses to darling corduroy dungarees, the new collection" class="nk-img-half pull-xs-left">
+
+                        <p>An entrepreneur must have a solid marketing and sales plan when starting a fashion company. This plan must align with the demographics of the organization’s customer base, as well as fit into its annual budget. She must calculate the cost of overhead, such as offices, employee salaries, supplies and other materials.</p>
+
+                        <div class="clearfix"></div>
+
+                        <ul>
+                            <li>She must also consider incidental costs, such as postage;</li>
+                            <li>Once a budget has been created, the entrepreneur must know;</li>
+                            <li>She may apply for a bank loan;</li>
+                            <li>She may also seek out investors or angels;</li>
+                            <li>Alternatively, she may apply for grant money for which she may be eligible;</li>
+                        </ul>
+
+                        <p>When starting a fashion company, an entrepreneur must identify his target customer. He must learn their gender and age. He must determine where and how often these individuals shop. He must also gain an understanding of what trends are currently popular with the demographic.</p>
+
+                        <ul class="nk-article-tags">
+                            <li><a href="#">fashion</a></li>
+                            <li><a href="#">beauty</a></li>
+                            <li><a href="#">news</a></li>
+                        </ul>
+
+
+                        <!-- START: Comments -->
+                        <div class="nk-comments" id="comments">
+                            <h3 class="text-main">Comments</h3>
+
+                            <!-- START: Comment -->
+                            <div class="nk-comment">
+                                <div class="nk-comment-avatar">
+                                    <a href="#"><img src="assets/images/avatar-2.jpg" alt=""></a>
+                                </div>
+                                <div class="nk-comment-meta">
+                                    <div class="nk-comment-name"><a href="#">Kurt Tucker</a></div>
+                                    <div class="nk-comment-date">20 September, 2016</div>
+                                    <div class="nk-comment-reply"><a href="#">Reply</a></div>
+                                </div>
+                                <div class="nk-comment-text">
+                                    <p>Of. Lesser it good moved tree under living male under day The evening. Waters creeping gathered give also grass beginning.</p>
+                                </div>
+
+                                <!-- START: Comment -->
+                                <div class="nk-comment">
+                                    <div class="nk-comment-avatar">
+                                        <a href="#"><img src="assets/images/avatar-1.jpg" alt=""></a>
+                                    </div>
+                                    <div class="nk-comment-meta">
+                                        <div class="nk-comment-name"><a href="#">Lesa Cruz</a></div>
+                                        <div class="nk-comment-date">20 September, 2016</div>
+                                        <div class="nk-comment-reply"><a href="#">Reply</a></div>
+                                    </div>
+                                    <div class="nk-comment-text">
+                                        <p>Fourth give grass creature. Whose fowl. His which male which yielding fly won't creature after beast male. Itself. Life heaven whales over given fly whales lesser, day winged one after.</p>
+                                    </div>
+
+                                    <!-- START: Comment -->
+                                    <div class="nk-comment">
+                                        <div class="nk-comment-avatar">
+                                            <a href="#"><img src="assets/images/avatar-3.jpg" alt=""></a>
+                                        </div>
+                                        <div class="nk-comment-meta">
+                                            <div class="nk-comment-name"><a href="#">Katie Anderson</a></div>
+                                            <div class="nk-comment-date">21 September, 2016</div>
+                                            <div class="nk-comment-reply"><a href="#">Reply</a></div>
+                                        </div>
+                                        <div class="nk-comment-text">
+                                            <p>Given signs fifth female air and second face earth one is. Whose greater behold had after he whales forth cattle Thing said kind after his.</p>
+                                            <p>Male upon thing had us hath doesn't great male fifth us. Every whales own given open upon divided life i which blessed subdue moving give.</p>
+                                        </div>
+                                    </div>
+                                    <!-- END: Comment -->
+                                </div>
+                                <!-- END: Comment -->
+                            </div>
+                            <!-- END: Comment -->
+
+                            <!-- START: Comment -->
+                            <div class="nk-comment">
+                                <div class="nk-comment-avatar">
+                                    <a href="#"><img src="assets/images/avatar-4.jpg" alt=""></a>
+                                </div>
+                                <div class="nk-comment-meta">
+                                    <div class="nk-comment-name"><a href="#">Luke Fuller</a></div>
+                                    <div class="nk-comment-date">21 September, 2016</div>
+                                    <div class="nk-comment-reply"><a href="#"><i class="ion-reply"></i> Reply</a></div>
+                                </div>
+                                <div class="nk-comment-text">
+                                    <p>To set. Lights likeness after, stars void in doesn't subdue.</p>
+                                </div>
+                            </div>
+                            <!-- END: Comment -->
+                        </div>
+                        <!-- END: Comments -->
+
+                        <!-- START: Reply -->
+                        <div class="nk-reply">
+                            <h3 class="text-main">Leave a Reply</h3>
+                            <form action="#" class="nk-form">
+                                <textarea class="form-control" name="comment" rows="1" placeholder="Comment"></textarea>
+                                <input type="text" class="form-control" name="name" placeholder="Your Name">
+                                <input type="email" class="form-control" name="email" placeholder="Your Email">
+                                <button class="nk-form-btn text-main">Reply</button>
+                            </form>
+                            <div class="nk-gap-2"></div>
+                        </div>
+                        <!-- END: Reply -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Right Info -->
+        <div class="nk-layout">
+            <div class="nk-layout-bottom-right-rotated">
+
+            </div>
+        </div>
+    </div>
+    <div class="nk-main-bg"></div>
+    <!-- END: Main Page Content -->
+
+    <!--
+        START: Blog
+
+        Additional Classes:
+            .active
+
+        Note:
+            If you don't want to show blog, just remove all content inside and remove .active class, but don't remove this block completely
+    -->
+    <div class="nk-blog" id="nk-blog">
+
+    </div>
+    <!-- END: Blog -->
+
+
+
+
+    <!-- START: Scripts -->
+
+    <!-- GSAP -->
+    <script src="assets/bower_components/gsap/src/minified/TweenMax.min.js"></script>
+    <script src="assets/bower_components/gsap/src/minified/plugins/ScrollToPlugin.min.js"></script>
+
+    <!-- History.js -->
+    <script src="assets/bower_components/history.js/scripts/bundled/html4%2Bhtml5/jquery.history.js"></script>
+
+    <!-- Bootstrap Custom -->
+    <script src="assets/js/bootstrap-custom.min.js"></script>
+
+    <!-- Jquery Form -->
+    <script src="assets/bower_components/jquery-form/jquery.form.js"></script>
+
+    <!-- Jquery Validation -->
+    <script src="assets/bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+
+    <!-- Hammer.js -->
+    <script src="assets/bower_components/hammer.js/hammer.min.js"></script>
+
+    <!-- NanoSroller -->
+    <script src="assets/bower_components/nanoscroller/bin/javascripts/jquery.nanoscroller.min.js"></script>
+
+    <!-- Background Check Custom -->
+    <script src="assets/plugins/background-check/background-check.min.js"></script>
+
+    <!-- Jarallax Video -->
+    <script src="assets/bower_components/jarallax/dist/jarallax-video.min.js"></script>
+
+    <!-- Umbrella -->
+    <script src="assets/js/umbrella.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/umbrella-init.js"></script>
+    <!-- END: Scripts -->
+
+
+
+</body>
+
+</html>

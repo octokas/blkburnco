@@ -1,0 +1,27 @@
+{
+    "name": "umbrella",
+    "version": "1.0.0",
+    "authors": [
+        "nK",
+        "blkburn"
+    ],
+    "description": "Premium HTML Template",
+    "license": "Envato REGULAR LICENSE",
+    "homepage": "https://nkdev.info",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components"
+    ],
+    "dependencies": {
+        "jquery": "~2.2.4",
+        "gsap": "~1.19.0",
+        "history.js": "~1.8.0",
+        "jquery-validation": "~1.15.1",
+        "jquery-form": "git://github.com/malsup/form.git",
+        "hammer.js": "~2.0.8",
+        "nanoscroller": "~0.8.7",
+        "jarallax": "~1.10.6"
+    }
+}

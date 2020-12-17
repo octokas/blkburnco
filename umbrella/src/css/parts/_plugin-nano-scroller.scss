@@ -1,0 +1,61 @@
+.nano {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    .nano-content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: scroll;
+        overflow-x: hidden;
+        outline: none;
+        -webkit-overflow-scrolling: touch;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    > .nano-pane {
+        width: 8px;
+        background: nano;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        transition: .2s opacity;
+        visibility: hidden\9; // Target only IE7 and IE8 with this hack
+        opacity: .01;
+        z-index: 1;
+
+        > .nano-slider {
+            background: #424242;
+            position: relative;
+            margin: 0 1px;
+            opacity: 0.4;
+            border-radius: 4px;
+            transition: .2s opacity;
+        }
+
+        &:hover > .nano-slider {
+            opacity: 1;
+        }
+    }
+}
+
+.has-scrollbar > .nano-content::-webkit-scrollbar {
+    display: block;
+}
+
+.nano-pane {
+    .nano:hover > &,
+    &.active,
+    &.flashed {
+        visibility: visible\9; // Target only IE7 and IE8 with this hack
+        opacity: 0.99;
+    }
+}

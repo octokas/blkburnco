@@ -1,0 +1,131 @@
+
+// slider
+.nk-slider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: $z_slider;
+
+    // default slider items
+    > .nk-slider-item {
+        display: none;
+    }
+
+    .nk-slider-video-slide:after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+    }
+    .nk-slider-video-slide iframe,
+    .nk-slider-video-slide video {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// slider nav
+.nk-slider-nav {
+    font-weight: bold;
+    user-select: none;
+
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    // bullets list
+    > ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        padding-bottom: 61px;
+        margin-right: 1px;
+
+        &:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        > li {
+            position: relative;
+            cursor: pointer;
+            transition: .2s color ease, .2s opacity;
+            margin: 3px 0;
+            transform: rotate(90deg);
+            text-align: center;
+
+            &.active,
+            &:hover,
+            &.hover {
+                color: $color_main;
+            }
+        }
+    }
+
+    // arrows
+    .nk-slider-nav-prev,
+    .nk-slider-nav-next {
+        position: relative;
+        cursor: pointer;
+        transition: .2s color ease;
+        right: -2px;
+        height: 27px;
+
+        &:hover,
+        &.hover {
+            color: $color_main;
+        }
+    }
+
+    // slim style
+    &.nk-slider-nav-slim {
+        // bullets list
+        > ul {
+            padding-bottom: 98px;
+
+            > li {
+                position: absolute;
+                cursor: default;
+                color: $color_main;
+                opacity: 0;
+                visibility: hidden;
+                transition: .2s color ease, .2s opacity, .2s visibility;
+
+                &.active {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+
+        // arrows
+        .nk-slider-nav-prev,
+        .nk-slider-nav-next {
+            right: 0px;
+        }
+    }
+}
+
+// mobile
+@media #{$media_smaller_sm} {
+    .nk-slider-nav {
+        display: none;
+    }
+    .nk-nav .nk-slider-categories {
+        display: none;
+    }
+}

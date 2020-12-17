@@ -1,0 +1,27 @@
+.nk-social-links {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: $font_headings;
+    margin: 0;
+    padding: 0;
+    margin-left: -7px;
+    margin-right: -7px;
+    list-style-type: none;
+
+    li {
+        display: inline-block;
+        margin: 0 7px;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    a:hover,
+    a:focus,
+    a:active,
+    a.hover {
+        color: $color_main;
+    }
+}

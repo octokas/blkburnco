@@ -1,0 +1,75 @@
+// main color
+$color_main: #F44336;
+
+// dark colors
+$color_dark: #212121;
+
+// text colors
+$color_text: #FFFFFF;
+
+// bootstrap colors
+$color_primary: #0275D8;
+$color_success: #5CB85C;
+$color_info: #5BC0DE;
+$color_warning: #F0AD4E;
+$color_danger: #D9534F;
+
+// main colors list
+$colors: (
+    "main"  : $color_main,
+    "primary" : $color_primary,
+    "success" : $color_success,
+    "info"    : $color_info,
+    "warning" : $color_warning,
+    "danger"  : $color_danger,
+    "white"   : $color_text,
+    "black"   : #000,
+    "dark"  : $color_dark
+);
+
+// z indexes
+$z_navbar: 8;
+$z_navbar_bg: 4;
+$z_navbar_mobile: 10;
+$z_navbar_mobile_bg: 9;
+$z_layout_top_left: 7;
+$z_layout_top_right: 11;
+$z_layout_top_center: 4;
+$z_layout_bottom_left: 7;
+$z_layout_bottom_left_blog: 9;
+$z_layout_bottom_right: 3;
+$z_layout_bottom_center: 9;
+$z_layout_content_title: 5;
+$z_slider: 0;
+$z_content: 6;
+$z_content_bg: 4;
+$z_content_mobile_bg: 5;
+$z_content_main: 6;
+$z_content_main_bg: 5;
+$z_content_main_mobile_bg: 5;
+$z_blog_second_list_item: 8;
+$z_blog_second_list_item_mobile: 5;
+
+// fonts
+$font_headings: 'Helvetica', 'Roboto', 'Arial', sans-serif;
+$font_body: $font_headings;
+$html_font_size: 14px;
+$body_line_height: 2.287;
+$headings_line_height: 1.7;
+$display_headings_line_height: 1.1;
+
+// media variables
+$media_xxs:           '(max-width: 543px)';
+$media_xs:            '(max-width: 767px)';
+$media_sm:            '(min-width: 767px) and (max-width: 991px)';
+$media_md:            '(min-width: 992px) and (max-width: 1199px)';
+$media_lg:            '(min-width: 1200)';
+
+// additional variables
+$media_smaller_xs:    '(max-width: 767px)';
+$media_smaller_sm:    '(max-width: 991px)';
+$media_smaller_md:    '(max-width: 1199px)';
+$media_larger_xs:     '(min-width: 544px)';
+$media_larger_sm:     '(min-width: 768px)';
+$media_larger_md:     '(min-width: 992px)';
+$media_larger_lg:     '(min-width: 1200px)';

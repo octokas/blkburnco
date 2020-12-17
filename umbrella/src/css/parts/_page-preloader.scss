@@ -1,0 +1,41 @@
+
+// spinner
+$preloader_color: rgba($color_text, 0.1);
+$preloader_color_inner: $color_main;
+$preloader_size: 35px;
+$preloader_size_inner: $preloader_size * 0.4;
+$preloader_weight: 3px;
+.nk-spinner {
+    position: relative;
+    width: $preloader_size;
+    height: $preloader_size;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 $preloader_weight $preloader_color;
+
+    span {
+        position: absolute;
+        display: block;
+        width: $preloader_size_inner;
+        height: $preloader_size_inner;
+        overflow: hidden;
+        transform-origin: $preloader_size / 2 $preloader_size / 2;
+        animation: nk-spinner 0.6s infinite linear;
+
+        &:after {
+            content: '';
+            display: block;
+            width: $preloader_size;
+            height: $preloader_size;
+            border-radius: 50%;
+            box-shadow: inset 0 0 0 $preloader_weight $preloader_color_inner;
+        }
+    }
+}
+@keyframes nk-spinner {
+    100% { transform: rotate(360deg) }
+}
+
+// spinner inside slider navigation
+.nk-slider-nav .nk-spinner {
+    top: 9px;
+}

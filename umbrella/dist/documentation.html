@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<!--
+  Name: Umbrella. - Brad's Portfolio
+  Version: 1.16.13
+  Author: blkburn, Kaska
+  Website: https://kaska.rocks
+  Copyright 2020.
+-->
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="blkburn">
+    <title>Umbrella. | Documentation.</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.jpg">
+
+    <!-- START: Styles -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300i,400,700" rel="stylesheet">
+
+    <!-- Bootstrap Custom -->
+    <link rel="stylesheet" href="assets/css/bootstrap-custom.min.css">
+
+    <!-- Umbrella -->
+    <link rel="stylesheet" href="assets/css/umbrella.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <!-- END: Styles -->
+
+    <!-- jQuery -->
+    <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+
+
+
+</head>
+
+
+
+<body>
+
+    <!--
+        START: Fixed Layout
+
+        Contains fixed page elements like slider, navigation, logo
+    -->
+    <div class="nk-layout">
+        <!--
+            Slider
+
+            Additional Classes:
+                .nk-slider-hide-titles - hide titles after slide
+
+            Additional Classes Per Slide:
+                .active - active slide on startup
+
+            Additional Attributes:
+                data-active-category - current active category
+                data-autoplay - autoplay delay in milliseconds
+                data-transition-speed - transition speed in milliseconds
+                data-transition-effect - transition effect for slides. Available effects: fade, divide, top, left, right, bottom
+                data-category-transition-speed - transition speed in milliseconds after category change
+                data-category-transition-effect - transition effect for slides after category change
+                data-force-reload - reload slider on ajax page request. Required values like in data-transition-effect attribute.
+
+            Additional Attributes Per Slide:
+                data-categories - list with categories
+                data-background-position - position for slide image. By default "50% 50%"
+
+            Notes:
+                If you want add more then 1 category per slide, type it with | divider.
+                Example: data-categories="Fashion|Portraits|Nature"
+
+                If you want to add slide in all categories, use *
+                Example: data-categories="*"
+        -->
+
+        <div class="nk-slider" data-active-category="Fashion" data-transition-speed="500" data-transition-effect="fade" data-category-transition-speed="500" data-category-transition-effect="top" data-autoplay="false" data-force-reload="false">
+            <div class="nk-slider-item active" data-categories="Fashion" data-background-position="50% 20%">
+                <img src="assets/images/slide-1.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 10%">
+                <img src="assets/images/slide-2.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Nature" data-background-position="50% 30%">
+                <img src="assets/images/slide-11.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 10%">
+                <img src="assets/images/slide-4.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 50%">
+                <img src="assets/images/slide-5.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Portraits" data-background-position="50% 50%">
+                <img src="assets/images/slide-6.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 5%">
+                <img src="assets/images/slide-7.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 20%">
+                <img src="assets/images/slide-8.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 5%">
+                <img src="assets/images/slide-9.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Portraits" data-background-position="50% 20%">
+                <img src="assets/images/slide-10.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Nature" data-background-position="50% 5%">
+                <img src="assets/images/slide-3.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Nature" data-background-position="50% 5%">
+                <img src="assets/images/slide-12.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Nature" data-background-position="50% 5%">
+                <img src="assets/images/slide-13.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 5%">
+                <img src="assets/images/slide-14.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 5%">
+                <img src="assets/images/slide-15.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Portraits" data-background-position="50% 5%">
+                <img src="assets/images/slide-16.jpg" alt="">
+            </div>
+            <div class="nk-slider-item" data-categories="Portraits" data-background-position="50% 5%">
+                <img src="assets/images/slide-17.jpg" alt="">
+            </div>
+        </div>
+
+
+        <!-- Top Center -->
+        <div class="nk-layout-top-center">
+            <nav class="nk-nav">
+                <ul class="nk-slider-categories">
+                    <!-- Here will be inserted available slider categories -->
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Bottom Right -->
+        <div class="nk-layout-bottom-right">
+            <!--
+                START: Slider Navigation
+
+                Additional Classes:
+                    .nk-slider-nav-slim
+            -->
+            <div class="nk-slider-nav">
+                <ul>
+                    <!-- Here will be inserted slider bullets -->
+                </ul>
+                <div>
+                    <div class="nk-slider-nav-prev">
+                        <span class="nk-icon-arrow-up"></span>
+                    </div>
+                    <div class="nk-slider-nav-next">
+                        <span class="nk-icon-arrow-down"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- END: Slider Navigation -->
+        </div>
+
+        <!-- Top Left -->
+        <div class="nk-layout-top-left">
+
+            <a href="./" class="nk-nav-logo">
+                <img src="assets/images/logo.png" alt="" width="133" data-logo-dark="assets/images/logo-dark.png">
+            </a>
+
+
+            <!-- There will be inserted loading spinner when ajax -->
+            <div class="nk-loading-spinner-place"></div>
+
+            <!-- Top Left Rotated -->
+            <div class="nk-layout-top-left-rotated">
+                <nav class="nk-nav">
+                    <ul>
+                        <li>
+                            <a href="studio.html">Studio</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Top Right -->
+        <div class="nk-layout-top-right">
+            <span class="nk-nav-toggle">
+                <span class="nk-icon-burger">
+                    <span class="nk-t-1"></span>
+                    <span class="nk-t-2"></span>
+                    <span class="nk-t-3"></span>
+                </span>
+            </span>
+        </div>
+
+        <!-- Bottom Left -->
+        <div class="nk-layout-bottom-left">
+            <nav class="nk-nav">
+                <ul>
+                    <li>
+                        <a href="blog.html">Blog</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Bottom Left Blog -->
+        <div class="nk-layout-bottom-left-blog">
+            <nav class="nk-nav nk-nav-hide">
+                <ul>
+                    <li class="hover"><a href="./">Close</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Bottom Center -->
+        <div class="nk-layout-bottom-center">
+            <nav class="nk-nav">
+                <ul>
+                    <li>
+                        <a href="mailto:info@umbrella.com">info@umbrella.com</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Titles -->
+        <div class="nk-layout-content-tagline"><strong>12 Years of Experience</strong></div>
+        <h3 class="nk-layout-content-title">Documentation.</h3>
+        <h3 class="nk-layout-content-subtitle">The Supermodels Always Bring Their Flawless Festival Style to Rio</h3>
+    </div>
+    <!-- END: Fixed Layout -->
+
+
+
+    <!-- START: Navbar -->
+    <div class="nk-navbar" id="nk-navbar">
+        <div class="nano">
+            <div class="nano-content">
+                <div class="nk-nav-table">
+                    <div class="nk-nav-row nk-nav-row-center">
+                        <nav class="nk-nav">
+                            <ul>
+                                <li>
+                                    <a href="blog.html">
+                <span>Blog</span>
+            </a>
+                                </li>
+                                <li>
+                                    <a href="about.html">
+                <span>About</span>
+            </a>
+                                </li>
+                                <li>
+                                    <a href="team.html">
+                <span>Team</span>
+            </a>
+                                </li>
+                                <li>
+                                    <a href="contact.html">
+                <span>Contact Us</span>
+            </a>
+                                </li>
+                                <li class="active">
+                                    <a href="documentation.html">
+                <span>Help</span>
+            </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nk-navbar-bg">
+        <div class="nk-navbar-image hidden-lg-up" style="background-image: url('assets/images/bg-menu.jpg');"></div>
+    </div>
+    <!-- END: Navbar -->
+
+
+
+    <!--
+        START: Main Page Content
+
+        Additional Classes:
+            .active
+            .nk-main-lower-title - title will be visible under content text
+
+        Additional Attributes:
+            data-transition-speed - transition speed in milliseconds
+            data-transition-in - top, bottom, right. Show transition type
+            data-transition-out - top, bottom, right. Hide transition type
+
+        Note:
+            If you don't want to show content, just remove all content inside .nano-content and inside .nk-layout and remove .active class, but don't remove this block completely
+    -->
+    <div class="nk-main active" id="nk-main" data-transition-speed="500" data-transition-in="bottom" data-transition-out="right">
+        <div class="nano">
+            <div class="nano-content">
+                <div class="nk-vertical-top">
+                    <div>
+
+                        <div class="nk-tabs">
+                            <div class="nk-item-offset">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#tabs-1-1" role="tab" data-toggle="tab">Getting Started</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#tabs-1-2" role="tab" data-toggle="tab">Files Structure</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#tabs-1-3" role="tab" data-toggle="tab">Slider</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#tabs-1-4" role="tab" data-toggle="tab">Navigations</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#tabs-1-5" role="tab" data-toggle="tab">Titles</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#tabs-1-6" role="tab" data-toggle="tab">Pages</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#tabs-1-7" role="tab" data-toggle="tab">Blog</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#tabs-1-8" role="tab" data-toggle="tab">AJAX Form</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#tabs-1-9" role="tab" data-toggle="tab">Credits</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="tabs-1-1">
+                                    <div class="nk-gap-3 mb-9"></div>
+
+                                    <h2 class="h3">Getting Started</h2>
+                                    <div class="nk-gap"></div>
+                                    <p>This is HTML template. To getting started you need only Browser to run HTML files. Better upload files to web server and run the site there.</p>
+                                    <p>If template is opened from local file system, some functions may not work. For example functions, that required PHP - AJAX Contact Form.</p>
+                                    <p>To customize template you can edit CSS and HTML files. Also if you are developer, there are available source files SCSS and JS (required ES6 transpiller). All used plugins added from Bower.</p>
+                                    <p>For each pages available blank CSS file for your customizations. See it here - <code>assets/css/custom.css</code>.</p>
+
+                                    <h3 class="h4">JS Options</h3>
+                                    <p>To set up some script things, there is available init script, where you can change default options - <code>assets/js/umbrella-init.js</code>.</p>
+
+                                    <div class="nk-pre">
+                                        <pre>
+/*!-----------------------------------------------------------------
+  Name: Umbrella. - Photography HTML Template
+  Version: 1.0.0
+  Author: blkburn, blkburn
+  Website: https://nkdev.info
+  Purchase: https://themeforest.net/user/blkburn/portfolio
+  Support: https://nk.ticksy.com
+  License: You must have a valid license purchased only from ThemeForest (the above link) in order to legally use the theme for your project.
+  Copyright 2016.
+-------------------------------------------------------------------*/
+;(function() {
+'use strict';
+
+/*------------------------------------------------------------------
+
+  Theme Options
+
+-------------------------------------------------------------------*/
+var options = {
+    // mobile device width (need for slider to activate all categories)
+    mobile: 991,
+
+    // automatically show all categories on mobile devices
+    sliderShowAllCategoriesOnMobile: true,
+
+    // enable AJAX page loading
+    ajax: true,
+
+    events: {
+        // callback to load new posts in blog
+        onLoadBlogPosts: function onLoadBlogPosts() {
+            var callback = arguments.length &lt;= 0 || arguments[0] === undefined ? function () {} : arguments[0];
+
+            // fake timeout to demonstrate loading
+            setTimeout(function () {
+                // new posts will be appended to the current list
+                var newPosts = [{
+                    title: 'Other designers are experimenting with backless blouses, cut-out crop tops, and spine-baring slips',
+                    url: 'blog-article.html'
+                }, {
+                    title: 'The style has long been considered to be the cotton anti-sexy of the underpinning world, with its noticeable seams and overtly full-coverage silhouette',
+                    url: 'blog-article.html'
+                }, {
+                    title: 'Or a little pantaloon, while maybe not sexy, can be really pretty and sweet',
+                    url: 'blog-article.html'
+                }];
+
+                // if true, ajax loading will never run again
+                var noMorePosts = true;
+
+                callback(newPosts, noMorePosts);
+            }, 1200);
+        }
+    }
+};
+
+if (typeof Umbrella !== 'undefined') {
+    Umbrella.setOptions(options);
+    Umbrella.init();
+}
+}());
+</pre>
+                                    </div>
+
+                                    <h3 class="h4">Commented Code</h3>
+                                    <p>All code in Umbrella commented and easy to edit things in HTML, CSS and JS files.</p>
+                                    HTML Example:
+                                    <div class="nk-pre">
+                                        <pre>
+&lt;!DOCTYPE html>
+&lt;!--
+  Name: Umbrella. - Photography HTML Template
+  Version: 1.0.0
+  Author: blkburn, blkburn
+  Website: https://nkdev.info
+  Purchase: https://themeforest.net/user/blkburn/portfolio
+  Support: https://nk.ticksy.com
+  License: You must have a valid license purchased only from ThemeForest (the above link) in order to legally use the theme for your project.
+  Copyright 2016.
+-->
+&lt;html lang="en">
+
+&lt;head>
+    &lt;meta charset="utf-8">
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1">
+    &lt;meta name="description" content="">
+    &lt;meta name="author" content="blkburn">
+    &lt;title>Umbrella. | Photography Template&lt;/title>
+    &lt;link rel="icon" type="image/png" href="assets/images/favicon.jpg">
+
+    &lt;!-- START: Styles -->
+
+    &lt;!-- Google Fonts -->
+    &lt;link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300i,400,700%7cMarcellus+SC" rel="stylesheet">
+
+    &lt;!-- Bootstrap Custom -->
+    &lt;link rel="stylesheet" href="assets/css/bootstrap-custom.min.css">
+
+    &lt;!-- Umbrella -->
+    &lt;link rel="stylesheet" href="assets/css/umbrella.css">
+
+    &lt;!-- Custom Styles -->
+    &lt;link rel="stylesheet" href="assets/css/custom.css">
+
+    &lt;!-- END: Styles -->
+
+    &lt;!-- jQuery -->
+    &lt;script src="assets/bower_components/jquery/dist/jquery.min.js">&lt;/script>
+&lt;/head>
+
+&lt;body>
+    &lt;!--
+        START: Fixed Layout
+
+        Contains fixed page elements like slider, navigation, logo
+    -->
+    &lt;div class="nk-layout">
+        &lt;!--
+            Slider
+
+            Additional Classes:
+                .nk-slider-hide-titles - hide titles after slide
+
+            Additional Classes Per Slide:
+                .active - active slide on startup
+
+            Additional Attributes:
+                data-active-category - current active category
+                data-autoplay - autoplay delay in milliseconds
+                data-transition-speed - transition speed in milliseconds
+                data-transition-effect - transition effect for slides. Available effects: fade, divide, top, left, right, bottom
+                data-category-transition-speed - transition speed in milliseconds after category change
+                data-category-transition-effect - transition effect for slides after category change
+                data-force-reload - reload slider on ajax page request. Required values like in data-transition-effect attribute.
+
+            Additional Attributes Per Slide:
+                data-categories - list with categories
+                data-background-position - position for slide image. By default "50% 50%"
+
+            Notes:
+                If you want add more then 1 category per slide, type it with | divider.
+                Example: data-categories="Fashion|Portraits|Nature"
+
+                If you want to add slide in all categories, use *
+                Example: data-categories="*"
+        -->
+        &lt;div class="nk-slider nk-slider-hide-titles" data-active-category="Fashion" data-transition-speed="500" data-transition-effect="fade" data-category-transition-speed="500" data-category-transition-effect="top" data-autoplay="false" data-force-reload="fade">
+            &lt;div class="nk-slider-item active" data-categories="Fashion" data-background-position="50% 50%">
+                &lt;img src="assets/images/slide-1.jpg" alt="">
+            &lt;/div>
+            &lt;div class="nk-slider-item" data-categories="Fashion|Portraits" data-background-position="50% 10%">
+                &lt;img src="assets/images/slide-2.jpg" alt="">
+            &lt;/div>
+            &lt;div class="nk-slider-item" data-categories="Fashion|Portraits|Nature" data-background-position="50% 0">
+                &lt;img src="assets/images/slide-3.jpg" alt="">
+            &lt;/div>
+            &lt;div class="nk-slider-item" data-categories="Fashion|Portraits" data-background-position="50% 10%">
+                &lt;img src="assets/images/slide-4.jpg" alt="">
+            &lt;/div>
+            &lt;div class="nk-slider-item" data-categories="Fashion|Portraits" data-background-position="50% 50%">
+                &lt;img src="assets/images/slide-5.jpg" alt="">
+            &lt;/div>
+            &lt;div class="nk-slider-item" data-categories="Fashion|Portraits" data-background-position="50% 50%">
+                &lt;img src="assets/images/slide-6.jpg" alt="">
+            &lt;/div>
+            &lt;div class="nk-slider-item" data-categories="Fashion|Portraits|Nature" data-background-position="50% 5%">
+                &lt;img src="assets/images/slide-7.jpg" alt="">
+            &lt;/div>
+            &lt;div class="nk-slider-item" data-categories="Fashion|Nature" data-background-position="50% 20%">
+                &lt;img src="assets/images/slide-8.jpg" alt="">
+            &lt;/div>
+            &lt;div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 50%">
+                &lt;img src="assets/images/slide-6.jpg" alt="">
+            &lt;/div>
+        &lt;/div>
+
+        &lt;!-- Top Center -->
+        &lt;div class="nk-layout-top-center">
+            &lt;nav class="nk-nav">
+                &lt;ul class="nk-slider-categories">
+                    &lt;!-- Here will be inserted available slider categories -->
+                &lt;/ul>
+            &lt;/nav>
+        &lt;/div>
+
+        &lt;!-- Bottom Right -->
+        &lt;div class="nk-layout-bottom-right">
+            &lt;!--
+                START: Slider Navigation
+
+                Additional Classes:
+                    .nk-slider-nav-slim
+            -->
+            &lt;div class="nk-slider-nav nk-slider-nav-slim">
+                &lt;ul>
+                    &lt;!-- Here will be inserted slider bullets -->
+                &lt;/ul>
+                &lt;div>
+                    &lt;div class="nk-slider-nav-prev">
+                        &lt;span class="nk-icon-arrow-up">&lt;/span>
+                    &lt;/div>
+                    &lt;div class="nk-slider-nav-next">
+                        &lt;span class="nk-icon-arrow-down">&lt;/span>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+            &lt;!-- END: Slider Navigation -->
+        &lt;/div>
+
+        &lt;!-- Top Left -->
+        &lt;div class="nk-layout-top-left">
+            &lt;a href="./" class="nk-nav-logo">
+                &lt;img src="assets/images/logo.png" alt="" width="133" data-logo-dark="assets/images/logo-dark.png">
+            &lt;/a>
+
+            &lt;!-- There will be inserted loading spinner when ajax -->
+            &lt;div class="nk-loading-spinner-place">&lt;/div>
+
+            &lt;!-- Top Left Rotated -->
+            &lt;div class="nk-layout-top-left-rotated">
+                &lt;nav class="nk-nav">
+                    &lt;ul>
+                        &lt;li>
+                            &lt;a href="studio.html">Studio&lt;/a>
+                        &lt;/li>
+                        &lt;li>
+                            &lt;a href="contact.html">Contact&lt;/a>
+                        &lt;/li>
+                    &lt;/ul>
+                &lt;/nav>
+            &lt;/div>
+        &lt;/div>
+
+        &lt;!-- Top Right -->
+        &lt;div class="nk-layout-top-right">
+            &lt;span class="nk-nav-toggle">
+                &lt;span class="nk-icon-burger">
+                    &lt;span class="nk-t-1">&lt;/span>
+                    &lt;span class="nk-t-2">&lt;/span>
+                    &lt;span class="nk-t-3">&lt;/span>
+                &lt;/span>
+            &lt;/span>
+        &lt;/div>
+
+        &lt;!-- Bottom Left -->
+        &lt;div class="nk-layout-bottom-left">
+            &lt;nav class="nk-nav">
+                &lt;ul>
+                    &lt;li>
+                        &lt;a href="blog.html">Blog&lt;/a>
+                    &lt;/li>
+                &lt;/ul>
+            &lt;/nav>
+        &lt;/div>
+
+        &lt;!-- Bottom Left Blog -->
+        &lt;div class="nk-layout-bottom-left-blog">
+            &lt;nav class="nk-nav nk-nav-hide">
+                &lt;ul>
+                    &lt;li class="hover">&lt;a href="./">Close&lt;/a>&lt;/li>
+                &lt;/ul>
+            &lt;/nav>
+        &lt;/div>
+
+        &lt;!-- Bottom Center -->
+        &lt;div class="nk-layout-bottom-center">
+            &lt;nav class="nk-nav">
+                &lt;ul>
+                    &lt;li>
+                        &lt;a href="mailto:info@umbrella.com">info@umbrella.com&lt;/a>
+                    &lt;/li>
+                &lt;/ul>
+            &lt;/nav>
+        &lt;/div>
+
+        &lt;!-- Titles -->
+        &lt;div class="nk-layout-content-tagline">
+            &lt;strong>12 Years of Experience&lt;/strong>
+        &lt;/div>
+        &lt;h3 class="nk-layout-content-title">Start Cheering.&lt;/h3>
+        &lt;h3 class="nk-layout-content-subtitle">The Supermodels Always Bring Their Flawless Festival Style to Rio&lt;/h3>
+    &lt;/div>
+    &lt;!-- END: Fixed Layout -->
+
+    &lt;!-- START: Navbar -->
+    &lt;div class="nk-navbar" id="nk-navbar">
+        &lt;div class="nano">
+            &lt;div class="nano-content">
+                &lt;div class="nk-nav-table">
+                    &lt;div class="nk-nav-row nk-nav-row-center">
+                        &lt;nav class="nk-nav">
+                            &lt;ul>
+                                &lt;li>
+                                    &lt;a href="blog.html">
+                                        &lt;span>Blog&lt;/span>
+                                    &lt;/a>
+                                &lt;/li>
+                                &lt;li>
+                                    &lt;a href="about.html">
+                                        &lt;span>About&lt;/span>
+                                    &lt;/a>
+                                &lt;/li>
+                                &lt;li>
+                                    &lt;a href="team.html">
+                                        &lt;span>Team&lt;/span>
+                                    &lt;/a>
+                                &lt;/li>
+                                &lt;li>
+                                    &lt;a href="contact.html">
+                                        &lt;span>Contact Us&lt;/span>
+                                    &lt;/a>
+                                &lt;/li>
+                                &lt;li>
+                                    &lt;a href="documentation.html">
+                                        &lt;span>Help&lt;/span>
+                                    &lt;/a>
+                                &lt;/li>
+                            &lt;/ul>
+                        &lt;/nav>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="nk-navbar-bg">
+        &lt;div class="nk-navbar-image hidden-lg-up" style="background-image: url('assets/images/bg-menu.jpg');">&lt;/div>
+    &lt;/div>
+    &lt;!-- END: Navbar -->
+...
+</pre>
+                                    </div>
+
+                                    CSS Example:
+                                    <div class="nk-pre">
+                                        <pre>
+/*!-----------------------------------------------------------------
+  Name: Umbrella. - Photography HTML Template
+  Version: 1.0.0
+  Author: blkburn, blkburn
+  Website: https://nkdev.info
+  Purchase: https://themeforest.net/user/blkburn/portfolio
+  Support: https://nk.ticksy.com
+  License: You must have a valid license purchased only from ThemeForest (the above link) in order to legally use the theme for your project.
+  Copyright 2016.
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+  [Typography]
+
+  Body:     14px/2.287 Helvetica, Arial, sans-serif;
+  Headings: Helvetica, Arial, sans-serif
+
+  Note: Most of font sizes are relative to the base font size (rem)
+ -------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+  [Color codes]
+
+  Main:    #F44336
+  Dark:    #212121
+
+  Bootstrap Primary:  #0275D8
+  Bootstrap Success:  #5CB85C
+  Bootstrap Info:     #5BC0DE
+  Bootstrap Warning:  #F0AD4E
+  Bootstrap Danger:   #D9534F
+ -------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+  [Table of contents]
+
+  1. Bootstrap
+  2. Preloader
+  3. Base
+  4. Typography
+  5. Helpers
+  6. Preloader
+  7. Navbar
+  8. Slider
+  9. Page Content
+  10. Page Layout
+  11. Blog
+  12. Documentation
+  13. Elements
+    - Element Blockquotes
+    - Element Forms
+    - Element Social Links
+    - Element Icons
+  14. Plugins
+    - Plugin NanoScroller
+ -------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+
+  Bootstrap
+
+ -------------------------------------------------------------------*/
+.row > [class*='col-'] {
+    position: relative;
+}
+
+.row.no-gap {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.row.no-gap > [class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.row.vertical-gap > [class*='col-'] {
+    padding-top: 30px;
+}
+
+.row.vertical-gap {
+    margin-top: -30px;
+}
+
+.row.sm-gap {
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+}
+
+.row.sm-gap > [class*='col-'] {
+    padding-right: 7.5px;
+    padding-left: 7.5px;
+}
+
+.row.sm-gap.vertical-gap > [class*='col-'] {
+    padding-top: 15px;
+}
+
+.row.sm-gap.vertical-gap {
+    margin-top: -15px;
+}
+
+.row.md-gap {
+    margin-left: -22.5px;
+    margin-right: -22.5px;
+}
+
+.row.md-gap > [class*='col-'] {
+    padding-right: 22.5px;
+    padding-left: 22.5px;
+}
+
+.row.md-gap.vertical-gap > [class*='col-'] {
+    padding-top: 45px;
+}
+
+.row.md-gap.vertical-gap {
+    margin-top: -45px;
+}
+
+.row.lg-gap {
+    margin-left: -30px;
+    margin-right: -30px;
+}
+
+.row.lg-gap > [class*='col-'] {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.row.lg-gap.vertical-gap > [class*='col-'] {
+    padding-top: 60px;
+}
+
+.row.lg-gap.vertical-gap {
+    margin-top: -60px;
+}
+
+.row.xl-gap {
+    margin-left: -35px;
+    margin-right: -35px;
+}
+
+.row.xl-gap > [class*='col-'] {
+    padding-right: 35px;
+    padding-left: 35px;
+}
+
+.row.xl-gap.vertical-gap > [class*='col-'] {
+    padding-top: 70px;
+}
+
+.row.xl-gap.vertical-gap {
+    margin-top: -70px;
+}
+
+.multi-columns-row > .first-in-row {
+    clear: left;
+}
+
+.multi-columns-row > {
+    /* clear the first in row for any block that has the class "multi-columns-row" */
+}
+
+.multi-columns-row > .col-xs-6:nth-child(2n + 3) {
+    clear: left;
+}
+
+.multi-columns-row > .col-xs-4:nth-child(3n + 4) {
+    clear: left;
+}
+
+.multi-columns-row > .col-xs-3:nth-child(4n + 5) {
+    clear: left;
+}
+
+.multi-columns-row > .col-xs-2:nth-child(6n + 7) {
+    clear: left;
+}
+
+.multi-columns-row > .col-xs-1:nth-child(12n + 13) {
+    clear: left;
+}
+
+@media (min-width: 544px) {
+    .multi-columns-row > {
+        /* reset if we have sm class */
+        /* clear first in row for small columns */
+    }
+    .multi-columns-row > [class*="col-"][class*="col-sm-"] {
+        clear: none;
+    }
+    .multi-columns-row > .col-sm-6:nth-child(2n + 3) {
+        clear: left;
+    }
+    .multi-columns-row > .col-sm-4:nth-child(3n + 4) {
+        clear: left;
+    }
+    .multi-columns-row > .col-sm-3:nth-child(4n + 5) {
+        clear: left;
+    }
+    .multi-columns-row > .col-sm-2:nth-child(6n + 7) {
+        clear: left;
+    }
+    .multi-columns-row > .col-sm-1:nth-child(12n + 13) {
+        clear: left;
+    }
+}
+
+@media (min-width: 768px) {
+    .multi-columns-row > {
+        /* reset if we have md class */
+        /* clear first in row for medium columns */
+    }
+    .multi-columns-row > [class*="col-"][class*="col-md-"] {
+        clear: none;
+    }
+    .multi-columns-row > .col-md-6:nth-child(2n + 3) {
+        clear: left;
+    }
+    .multi-columns-row > .col-md-4:nth-child(3n + 4) {
+        clear: left;
+    }
+    .multi-columns-row > .col-md-3:nth-child(4n + 5) {
+        clear: left;
+    }
+    .multi-columns-row > .col-md-2:nth-child(6n + 7) {
+        clear: left;
+    }
+    .multi-columns-row > .col-md-1:nth-child(12n + 13) {
+        clear: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .multi-columns-row > {
+        /* reset if we have lg class */
+        /* clear first in row for large columns */
+    }
+    .multi-columns-row > [class*="col-"][class*="col-lg-"] {
+        clear: none;
+    }
+    .multi-columns-row > .col-lg-6:nth-child(2n + 3) {
+        clear: left;
+    }
+    .multi-columns-row > .col-lg-4:nth-child(3n + 4) {
+        clear: left;
+    }
+    .multi-columns-row > .col-lg-3:nth-child(4n + 5) {
+        clear: left;
+    }
+    .multi-columns-row > .col-lg-2:nth-child(6n + 7) {
+        clear: left;
+    }
+    .multi-columns-row > .col-lg-1:nth-child(12n + 13) {
+        clear: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .multi-columns-row > {
+        /* reset if we have xl class */
+        /* clear first in row for large columns */
+    }
+    .multi-columns-row > [class*="col-"][class*="col-xl-"] {
+        clear: none;
+    }
+    .multi-columns-row > .col-xl-6:nth-child(2n + 3) {
+        clear: left;
+    }
+    .multi-columns-row > .col-xl-4:nth-child(3n + 4) {
+        clear: left;
+    }
+    .multi-columns-row > .col-xl-3:nth-child(4n + 5) {
+        clear: left;
+    }
+    .multi-columns-row > .col-xl-2:nth-child(6n + 7) {
+        clear: left;
+    }
+    .multi-columns-row > .col-xl-1:nth-child(12n + 13) {
+        clear: left;
+    }
+}
+
+.col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.nav-tabs {
+    border: none;
+}
+
+.nav-tabs .nav-link,
+.nav-tabs .nav-item,
+.nav-tabs .nav-item.open .nav-link,
+.nav-tabs .nav-item.open .nav-link:focus,
+.nav-tabs .nav-item.open .nav-link:hover,
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link.active:focus,
+.nav-tabs .nav-link.active:hover,
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+    border: none;
+    outline: none;
+    margin: 0;
+}
+
+.nav-tabs .nav-link,
+.nav-tabs .nav-item {
+    color: inherit;
+    font-weight: bold;
+}
+
+.nav-tabs .nav-item.open .nav-link,
+.nav-tabs .nav-item.open .nav-link:focus,
+.nav-tabs .nav-item.open .nav-link:hover,
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link.active:focus,
+.nav-tabs .nav-link.active:hover {
+    background-color: transparent;
+}
+
+.nav-tabs .nav-item.open .nav-link,
+.nav-tabs .nav-item.open .nav-link:focus,
+.nav-tabs .nav-item.open .nav-link:hover,
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link.active:focus,
+.nav-tabs .nav-link.active:hover,
+.nav-tabs .nav-link:hover {
+    color: #F44336;
+}
+
+.nav-tabs {
+    margin-left: -11.5px;
+    margin-right: -11.5px;
+}
+
+.nav-tabs .nav-item,
+.nav-tabs .nav-item + .nav-item {
+    margin-left: 11.5px;
+    margin-right: 11.5px;
+}
+
+.nav-tabs .nav-link {
+    padding: 2px 0;
+}
+
+code {
+    background-color: #f2f2f2;
+}
+
+.img-thumbnail {
+    background-color: #000;
+    border: none;
+}
+
+/*------------------------------------------------------------------
+
+  Preloader
+
+ -------------------------------------------------------------------*/
+.nk-preloader {
+    position: fixed;
+    display: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3000;
+}
+
+.nk-loading-spinner-place {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 30px;
+    height: 35px;
+}
+
+.nk-loading-spinner,
+.nk-loading-spinner-light {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px #212121;
+}
+
+.nk-loading-spinner i,
+.nk-loading-spinner-light i {
+    position: absolute;
+    display: block;
+    width: 28px;
+    height: 28px;
+    overflow: hidden;
+    -webkit-transform-origin: 40px 40px;
+        -ms-transform-origin: 40px 40px;
+            transform-origin: 40px 40px;
+    -webkit-animation: nk-loading-spinner 0.7s infinite linear;
+            animation: nk-loading-spinner 0.7s infinite linear;
+}
+
+.nk-loading-spinner i:after,
+.nk-loading-spinner-light i:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.8);
+}
+
+.nk-loading-spinner-light {
+    box-shadow: inset 0 0 0 2px #fff;
+}
+
+.nk-loading-spinner-light i:after {
+    box-shadow: inset 0 0 0 2px rgba(33, 33, 33, 0.8);
+}
+
+...
+</pre>
+                                    </div>
+
+                                    JS Example:
+                                    <div class="nk-pre">
+                                        <pre>
+/*!-----------------------------------------------------------------
+  Name: Umbrella. - Photography HTML Template
+  Version: 1.0.0
+  Author: blkburn, blkburn
+  Website: https://nkdev.info
+  Purchase: https://themeforest.net/user/blkburn/portfolio
+  Support: https://nk.ticksy.com
+  License: You must have a valid license purchased only from ThemeForest (the above link) in order to legally use the theme for your project.
+  Copyright 2016.
+-------------------------------------------------------------------*/
+;(function() {
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i &lt; props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/*------------------------------------------------------------------
+
+  Theme Options
+
+-------------------------------------------------------------------*/
+var options = {
+    // mobile device width (need for slider to activate all categories)
+    mobile: 991,
+    sliderShowAllCategoriesOnMobile: true,
+    events: {
+        // callback to load new posts in blog
+        onLoadBlogPosts: function onLoadBlogPosts() {
+            var callback = arguments.length &lt;= 0 || arguments[0] === undefined ? function () {} : arguments[0];
+
+            // fake timeout to demonstrate loading
+            setTimeout(function () {
+                // new posts will be appended to the current list
+                var newPosts = [{
+                    title: 'Other designers are experimenting with backless blouses, cut-out crop tops, and spine-baring slips',
+                    url: 'blog-article.html'
+                }, {
+                    title: 'The style has long been considered to be the cotton anti-sexy of the underpinning world, with its noticeable seams and overtly full-coverage silhouette',
+                    url: 'blog-article.html'
+                }, {
+                    title: 'Or a little pantaloon, while maybe not sexy, can be really pretty and sweet',
+                    url: 'blog-article.html'
+                }];
+
+                // if true, ajax loading will never run again
+                var noMorePosts = true;
+
+                callback(newPosts, noMorePosts);
+            }, 1200);
+        }
+    }
+};
+
+/*------------------------------------------------------------------
+
+  Utility
+
+-------------------------------------------------------------------*/
+var $ = jQuery;
+var tween = window.TweenMax;
+var isIOs = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+var isMobile = /Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/g.test(navigator.userAgent || navigator.vendor || window.opera);
+var isTouch = 'ontouchstart' in window || window.DocumentTouch && document instanceof DocumentTouch;
+
+// add 'is-mobile' or 'is-desktop' classname to html tag
+$('html').addClass(isMobile ? 'is-mobile' : 'is-desktop');
+
+/**
+ * window size
+ */
+var $wnd = $(window);
+var $doc = $(document);
+var $body = $('body');
+var wndW = 0;
+var wndH = 0;
+var docH = 0;
+function getWndSize() {
+    wndW = $wnd.width();
+    wndH = $wnd.height();
+    docH = $doc.height();
+}
+getWndSize();
+$wnd.on('resize load orientationchange', getWndSize);
+
+/**
+ * Debounce resize
+ */
+var resizeArr = [];
+var resizeTimeout = void 0;
+$wnd.on('load resize orientationchange', function (e) {
+    if (resizeArr.length) {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function () {
+            for (var k = 0; k &lt; resizeArr.length; k++) {
+                resizeArr[k](e);
+            }
+        }, 50);
+    }
+});
+function _debounceResize(func) {
+    if (typeof func === 'function') {
+        resizeArr.push(func);
+    } else {
+        window.dispatchEvent(new Event('resize'));
+    }
+}
+
+/**
+ * Throttle scroll
+ * thanks: https://jsfiddle.net/mariusc23/s6mLJ/31/
+ */
+var hideOnScrollList = [];
+var didScroll = void 0;
+var lastST = 0;
+
+$wnd.on('scroll load resize orientationchange', function () {
+    if (hideOnScrollList.length) {
+        didScroll = true;
+    }
+});
+
+function hasScrolled() {
+    var ST = $wnd.scrollTop();
+
+    var type = ''; // [up, down, end, start]
+
+    if (ST > lastST) {
+        type = 'down';
+    } else if (ST &lt; lastST) {
+        type = 'up';
+    } else {
+        type = 'none';
+    }
+
+    if (ST === 0) {
+        type = 'start';
+    } else if (ST >= docH - wndH) {
+        type = 'end';
+    }
+
+    for (var k in hideOnScrollList) {
+        if (typeof hideOnScrollList[k] === 'function') {
+            hideOnScrollList[k](type, ST, lastST, $wnd);
+        }
+    }
+
+    lastST = ST;
+}
+
+setInterval(function () {
+    if (didScroll) {
+        didScroll = false;
+        window.requestAnimationFrame(hasScrolled);
+    }
+}, 250);
+
+function _throttleScroll(callback) {
+    hideOnScrollList.push(callback);
+}
+
+...
+</pre>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabs-1-2">
+                                    <div class="nk-gap-3 mb-9"></div>
+
+                                    <h2 class="h3">Files Structure</h2>
+                                    <div class="nk-gap"></div>
+                                    <ul>
+                                        <li>
+                                            <code>/dist/</code> - main template folder with all files to getting started:
+                                            <ul>
+                                                <li><code>/*.html</code> - all html files;</li>
+                                                <li><code>/php/</code> - php file for AJAX Contact Form;</li>
+                                                <li><code>/assets/css/</code> - main template css files;</li>
+                                                <li><code>/assets/js/</code> - main template js files;</li>
+                                                <li><code>/assets/bower_components/</code> - all used 3rd-party plugins;</li>
+                                                <li><code>/assets/plugins/</code> - plugins, that not available via Bower;</li>
+                                                <li><code>/assets/images/</code> - all images used in template (note, in downloadable archive this is placeholder images);</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <code>/src/</code> - source files:
+                                            <ul>
+                                                <li><code>/css/</code> - SCSS source files;</li>
+                                                <li><code>/js/</code> - JS source files (required ES6 transpiller);</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabs-1-3">
+                                    <div class="nk-gap-3 mb-9"></div>
+
+                                    <h2 class="h3">Slider</h2>
+
+                                    <p>Slider - is the main element, placed on each page and supports many options.</p>
+                                    <p>HTML Example:</p>
+
+                                    <div class="nk-pre">
+                                        <pre>
+&lt;div class="nk-layout">
+
+    &lt;!-- Slider -->
+    &lt;div class="nk-slider nk-slider-hide-titles" data-active-category="Fashion" data-transition-speed="500" data-transition-effect="fade" data-category-transition-speed="500" data-category-transition-effect="top" data-autoplay="false" data-force-reload="fade">
+        &lt;div class="nk-slider-item active" data-categories="Fashion" data-background-position="50% 20%">
+            &lt;img src="assets/images/slide-1.jpg" alt="">
+        &lt;/div>
+        &lt;div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 10%">
+            &lt;img src="assets/images/slide-2.jpg" alt="">
+        &lt;/div>
+        &lt;div class="nk-slider-item" data-categories="Nature" data-background-position="50% 30%">
+            &lt;img src="assets/images/slide-11.jpg" alt="">
+        &lt;/div>
+        &lt;div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 10%">
+            &lt;img src="assets/images/slide-4.jpg" alt="">
+        &lt;/div>
+        &lt;div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 50%">
+            &lt;img src="assets/images/slide-5.jpg" alt="">
+        &lt;/div>
+        &lt;div class="nk-slider-item" data-categories="Portraits" data-background-position="50% 50%">
+            &lt;img src="assets/images/slide-6.jpg" alt="">
+        &lt;/div>
+        &lt;div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 5%">
+            &lt;img src="assets/images/slide-7.jpg" alt="">
+        &lt;/div>
+        &lt;div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 20%">
+            &lt;img src="assets/images/slide-8.jpg" alt="">
+        &lt;/div>
+        &lt;div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 5%">
+            &lt;img src="assets/images/slide-9.jpg" alt="">
+        &lt;/div>
+        &lt;div class="nk-slider-item" data-categories="Portraits" data-background-position="50% 20%">
+            &lt;img src="assets/images/slide-10.jpg" alt="">
+        &lt;/div>
+        &lt;div class="nk-slider-item" data-categories="Nature" data-background-position="50% 5%">
+            &lt;img src="assets/images/slide-3.jpg" alt="">
+        &lt;/div>
+        &lt;div class="nk-slider-item" data-categories="Nature" data-background-position="50% 5%">
+            &lt;img src="assets/images/slide-12.jpg" alt="">
+        &lt;/div>
+        &lt;div class="nk-slider-item" data-categories="Nature" data-background-position="50% 5%">
+            &lt;img src="assets/images/slide-13.jpg" alt="">
+        &lt;/div>
+        &lt;div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 5%">
+            &lt;img src="assets/images/slide-14.jpg" alt="">
+        &lt;/div>
+        &lt;div class="nk-slider-item" data-categories="Fashion" data-background-position="50% 5%">
+            &lt;img src="assets/images/slide-15.jpg" alt="">
+        &lt;/div>
+        &lt;div class="nk-slider-item" data-categories="Portraits" data-background-position="50% 5%">
+            &lt;img src="assets/images/slide-16.jpg" alt="">
+        &lt;/div>
+        &lt;div class="nk-slider-item" data-categories="Portraits" data-background-position="50% 5%">
+            &lt;img src="assets/images/slide-17.jpg" alt="">
+        &lt;/div>
+    &lt;/div>
+
+    ...
+
+&lt;/div>
+</pre>
+                                    </div>
+
+                                    <p>Additional Classes:</p>
+                                    <ul>
+                                        <li><code>.nk-slider-hide-titles</code> - hide titles after slide;</li>
+                                    </ul>
+
+                                    <p>Additional Classes Per Slide:</p>
+                                    <ul>
+                                        <li><code>.active</code> - active slide on startup;</li>
+                                    </ul>
+
+                                    <p>Additional Attributes:</p>
+                                    <ul>
+                                        <li><code>data-active-category</code> - current active category;</li>
+                                        <li><code>data-autoplay</code> - autoplay delay in milliseconds;</li>
+                                        <li><code>data-transition-speed</code> - transition speed in milliseconds;</li>
+                                        <li><code>data-transition-effect</code> - transition effect for slides. Available effects: fade, divide, top, left, right, bottom;</li>
+                                        <li><code>data-category-transition-speed</code> - transition speed in milliseconds after category change;</li>
+                                        <li><code>data-category-transition-effect</code> - transition effect for slides after category change. Required values like in data-transition-effect attribute;</li>
+                                        <li><code>data-force-reload</code> - reload slider on ajax page request. Required values like in data-transition-effect attribute;</li>
+                                    </ul>
+
+                                    <p>Additional Attributes Per Slide:</p>
+                                    <ul>
+                                        <li><code>data-categories</code> - list with categories;</li>
+                                        <li><code>data-background-position</code> - position for slide image. By default "50% 50%";</li>
+                                    </ul>
+
+                                    <p>Notes:</p>
+                                    <ul>
+                                        <li>If you want add more then 1 category per slide, type it with | divider. Example: data-categories="Fashion|Portraits|Nature"</li>
+                                        <li>If you want to add slide in all categories, use *. Example: data-categories="*"</li>
+                                    </ul>
+
+
+                                    <h2 class="h3">Slider Categories</h2>
+
+                                    <p>Categories list automatically generated using available slides.</p>
+
+                                    <div class="nk-pre">
+                                        <pre>
+&lt;div class="nk-layout">
+
+    &lt;!-- Slider -->
+    ...
+
+    &lt;!-- Top Center -->
+    &lt;div class="nk-layout-top-center">
+        &lt;nav class="nk-nav">
+            &lt;ul class="nk-slider-categories">
+                &lt;!-- Here will be inserted available slider categories -->
+            &lt;/ul>
+        &lt;/nav>
+    &lt;/div>
+
+    ...
+
+&lt;/div>
+</pre>
+                                    </div>
+
+
+                                    <h2 class="h3">Slider Navigation</h2>
+
+                                    <div class="nk-pre">
+                                        <pre>
+&lt;div class="nk-layout">
+
+    &lt;!-- Slider -->
+    ...
+
+    &lt;!-- Bottom Right -->
+    &lt;div class="nk-layout-bottom-right">
+        &lt;!-- START: Slider Navigation -->
+        &lt;div class="nk-slider-nav nk-slider-nav-slim">
+            &lt;ul>
+                &lt;!-- Here will be inserted slider bullets -->
+            &lt;/ul>
+            &lt;div>
+                &lt;div class="nk-slider-nav-prev">
+                    &lt;span class="nk-icon-arrow-up">&lt;/span>
+                &lt;/div>
+                &lt;div class="nk-slider-nav-next">
+                    &lt;span class="nk-icon-arrow-down">&lt;/span>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+        &lt;!-- END: Slider Navigation -->
+    &lt;/div>
+
+    ...
+
+&lt;/div>
+</pre>
+                                    </div>
+
+                                    <p>Additional Classes:</p>
+                                    <ul>
+                                        <li><code>.nk-slider-nav-slim</code> - slim style for navigation;</li>
+                                    </ul>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabs-1-4">
+                                    <div class="nk-gap-3 mb-9"></div>
+
+                                    <h2 class="h3">Navigations</h2>
+
+                                    <p>Available 3 fixed navigations, 1 logo and 1 main offscreen navigation.</p>
+                                    <p>HTML Example:</p>
+
+                                    <div class="nk-pre">
+                                        <pre>
+&lt;div class="nk-layout">
+
+    ...
+
+    &lt;!-- Top Left -->
+    &lt;div class="nk-layout-top-left">
+
+        &lt;a href="./" class="nk-nav-logo">
+            &lt;img src="assets/images/logo.png" alt="" width="133" data-logo-dark="assets/images/logo-dark.png">
+        &lt;/a>
+
+        &lt;!-- There will be inserted loading spinner when ajax -->
+        &lt;div class="nk-loading-spinner-place">&lt;/div>
+
+        &lt;!-- Top Left Rotated -->
+        &lt;div class="nk-layout-top-left-rotated">
+            &lt;nav class="nk-nav">
+                &lt;ul>
+                    &lt;li>
+                        &lt;a href="studio.html">Studio&lt;/a>
+                    &lt;/li>
+                    &lt;li>
+                        &lt;a href="contact.html">Contact&lt;/a>
+                    &lt;/li>
+                &lt;/ul>
+            &lt;/nav>
+        &lt;/div>
+    &lt;/div>
+
+    &lt;!-- Top Right -->
+    &lt;div class="nk-layout-top-right">
+        &lt;span class="nk-nav-toggle">
+            &lt;span class="nk-icon-burger">
+                &lt;span class="nk-t-1">&lt;/span>
+                &lt;span class="nk-t-2">&lt;/span>
+                &lt;span class="nk-t-3">&lt;/span>
+            &lt;/span>
+        &lt;/span>
+    &lt;/div>
+
+    &lt;!-- Bottom Left -->
+    &lt;div class="nk-layout-bottom-left">
+        &lt;nav class="nk-nav">
+            &lt;ul>
+                &lt;li>
+                    &lt;a href="blog.html">Blog&lt;/a>
+                &lt;/li>
+            &lt;/ul>
+        &lt;/nav>
+    &lt;/div>
+
+    &lt;!-- Bottom Left Blog -->
+    &lt;div class="nk-layout-bottom-left-blog">
+        &lt;nav class="nk-nav nk-nav-hide">
+            &lt;ul>
+                &lt;li class="hover">&lt;a href="./">Close&lt;/a>&lt;/li>
+            &lt;/ul>
+        &lt;/nav>
+    &lt;/div>
+
+    &lt;!-- Bottom Center -->
+    &lt;div class="nk-layout-bottom-center">
+        &lt;nav class="nk-nav">
+            &lt;ul>
+                &lt;li>
+                    &lt;a href="mailto:info@umbrella.com">info@umbrella.com&lt;/a>
+                &lt;/li>
+            &lt;/ul>
+        &lt;/nav>
+    &lt;/div>
+
+    ...
+
+&lt;/div>
+
+&lt;!-- START: Navbar -->
+&lt;div class="nk-navbar" id="nk-navbar">
+    &lt;div class="nano">
+        &lt;div class="nano-content">
+            &lt;div class="nk-nav-table">
+                &lt;div class="nk-nav-row nk-nav-row-center">
+                    &lt;nav class="nk-nav">
+                        &lt;ul>
+                            &lt;li>
+                                &lt;a href="blog.html">
+                                    &lt;span>Blog&lt;/span>
+                                &lt;/a>
+                            &lt;/li>
+                            &lt;li>
+                                &lt;a href="about.html">
+                                    &lt;span>About&lt;/span>
+                                &lt;/a>
+                            &lt;/li>
+                            &lt;li>
+                                &lt;a href="team.html">
+                                    &lt;span>Team&lt;/span>
+                                &lt;/a>
+                            &lt;/li>
+                            &lt;li>
+                                &lt;a href="contact.html">
+                                    &lt;span>Contact Us&lt;/span>
+                                &lt;/a>
+                            &lt;/li>
+                            &lt;li>
+                                &lt;a href="documentation.html">
+                                    &lt;span>Help&lt;/span>
+                                &lt;/a>
+                            &lt;/li>
+                        &lt;/ul>
+                    &lt;/nav>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+&lt;div class="nk-navbar-bg">
+    &lt;div class="nk-navbar-image hidden-lg-up" style="background-image: url('assets/images/bg-menu.jpg');">&lt;/div>
+&lt;/div>
+&lt;!-- END: Navbar -->
+</pre>
+                                    </div>
+
+                                    <p>Additional Classes:</p>
+                                    <ul>
+                                        <li><code>.nk-nav-hide</code> - hide navigation;</li>
+                                    </ul>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabs-1-5">
+                                    <div class="nk-gap-3 mb-9"></div>
+
+                                    <h2 class="h3">Titles</h2>
+
+                                    <p>On each page you can show fixed Title, Subtitle and Tagline.</p>
+                                    <p>HTML Example:</p>
+
+                                    <div class="nk-pre">
+                                        <pre>
+&lt;div class="nk-layout">
+
+    ...
+
+    &lt;!-- Titles -->
+    &lt;div class="nk-layout-content-tagline">
+        &lt;strong>12 Years of Experience&lt;/strong>
+    &lt;/div>
+    &lt;h3 class="nk-layout-content-title">Start Cheering.&lt;/h3>
+    &lt;h3 class="nk-layout-content-subtitle">The Supermodels Always Bring Their Flawless Festival Style to Rio&lt;/h3>
+&lt;/div>
+</pre>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabs-1-6">
+                                    <div class="nk-gap-3 mb-9"></div>
+
+                                    <h2 class="h3">Pages</h2>
+
+                                    <p>HTML Example:</p>
+
+                                    <div class="nk-pre">
+                                        <pre>
+&lt;!-- START: Main Page Content -->
+&lt;div class="nk-main" id="nk-main" data-transition-speed="500" data-transition-in="bottom" data-transition-out="right">
+    &lt;div class="nano">
+        &lt;div class="nano-content">
+            &lt;div class="nk-vertical-top">
+                &lt;div>
+                    Your Content Here.
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+    &lt;!-- Bottom Right Info -->
+    &lt;div class="nk-layout">
+        &lt;div class="nk-layout-bottom-right-rotated">
+            Optional right fixed info.
+        &lt;/div>
+    &lt;/div>
+&lt;/div>
+&lt;div class="nk-main-bg">&lt;/div>
+&lt;!-- END: Main Page Content -->
+</pre>
+                                    </div>
+
+                                    <p>Additional Classes:</p>
+                                    <ul>
+                                        <li><code>.active</code> - if you want show main content, add this class;</li>
+                                        <li><code>.nk-main-lower-title</code> - show content lower, than main page title (see <a href="contact.html">contact.html</a> page);</li>
+                                    </ul>
+
+                                    <p>Additional Attributes:</p>
+                                    <ul>
+                                        <li><code>data-transition-speed</code> - transition speed in milliseconds;</li>
+                                        <li><code>data-transition-in</code> - show transition type. Available values: top, bottom, right.</li>
+                                        <li><code>data-transition-out</code> - hide transition type. Available values: top, bottom, right.</li>
+                                        <li><code>data-color</code> - color for text</li>
+                                        <li><code>data-bg</code> - background color added on .nk-main-bg</li>
+                                        <li><code>data-bg-mobile</code> - background color for mobile devices added on .nk-main-bg</li>
+                                    </ul>
+
+                                    <p>Note: If you don't want to show content, just remove all content inside .nano-content and inside .nk-layout and remove .active class, but don't remove this block completely.</p>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabs-1-7">
+                                    <div class="nk-gap-3 mb-9"></div>
+
+                                    <h2 class="h3">Blog</h2>
+
+                                    <p>HTML Example:</p>
+
+                                    <div class="nk-pre">
+                                        <pre>
+&lt;!-- START: Blog -->
+&lt;div class="nk-blog active" id="nk-blog">
+
+    &lt;div class="nk-blog-item">
+        &lt;h2>&lt;a href="blog-article.html">From delicately embroidered broderie anglaise dresses to darling corduroy dungarees, the new collection&lt;/a>&lt;/h2>
+    &lt;/div>
+    &lt;div class="nk-blog-item">
+        &lt;h2>&lt;a href="blog-article.html">New look Saint Laurent comprises 15 hitherto-unknown models stripped down to their birthday suits, with only&lt;/a>&lt;/h2>
+    &lt;/div>
+    &lt;div class="nk-blog-item">
+        &lt;h2>&lt;a href="blog-article.html">Addressing the supermodel debate that has hit headlines in recent weeks, in which Jenner took&lt;/a>&lt;/h2>
+    &lt;/div>
+
+    &lt;div class="nk-blog-item">
+        &lt;h2>&lt;a href="blog-article.html">It's this attention to detail that has clients returning again and again&lt;/a>&lt;/h2>
+    &lt;/div>
+    &lt;div class="nk-blog-item">
+        &lt;h2>&lt;a href="blog-article.html">Current fashion seems to have gone full circle from garments known only by their historic associations to today’s outfits&lt;/a>&lt;/h2>
+    &lt;/div>
+    &lt;div class="nk-blog-item">
+        &lt;h2>&lt;a href="blog-article.html">With our indie kid sweatshirts, flight jackets, and straight leg boyfriend jeans we've become fashionably lazy&lt;/a>&lt;/h2>
+    &lt;/div>
+
+    &lt;div class="nk-blog-item">
+        &lt;h2>&lt;a href="blog-article.html">The runways have been overrun with a certain type of logomania&lt;/a>&lt;/h2>
+    &lt;/div>
+    &lt;div class="nk-blog-item">
+        &lt;h2>&lt;a href="blog-article.html">I would never wear anything that could be construed as 'offensive' to work&lt;/a>&lt;/h2>
+    &lt;/div>
+
+    &lt;!-- All other posts will be loaded using ajax. See umbrella-init.js file for callback function -->
+
+&lt;/div>
+<!-- END: Blog -->
+</pre>
+                                    </div>
+
+                                    <p>Additional Classes:</p>
+                                    <ul>
+                                        <li><code>.active</code> - if you want show blog, add this class;</li>
+                                    </ul>
+
+                                    <p>Note: If you don't want to show blog, just remove all content inside and remove .active class, but don't remove this block completely.</p>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabs-1-8">
+                                    <div class="nk-gap-3 mb-9"></div>
+
+                                    <h2 class="h3">AJAX Form</h2>
+                                    <p>AJAX contact form example you can find here - <a href="ajax-form.html">contact.html</a>. To configure contact form you should change file <code>php/contact.php</code>.</p>
+
+                                    <p>HTML Example:</p>
+                                    <div class="nk-pre">
+                                        <pre>
+&lt;form action="php/contact.php" class="nk-form nk-form-ajax">
+    &lt;div class="row vertical-gap">
+        &lt;div class="col-md-6">
+            &lt;input type="text" class="form-control required" name="name" placeholder="Your Name">
+        &lt;/div>
+        &lt;div class="col-md-6">
+            &lt;input type="email" class="form-control required" name="email" placeholder="Email">
+        &lt;/div>
+    &lt;/div>
+    &lt;div class="nk-gap-1">&lt;/div>
+    &lt;textarea class="form-control required" name="message" rows="1" placeholder="Message">&lt;/textarea>
+    &lt;div class="nk-form-response-success">&lt;/div>
+    &lt;div class="nk-form-response-error">&lt;/div>
+    &lt;button class="nk-form-btn text-main">Send&lt;/button>
+&lt;/form>
+</pre>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tabs-1-9">
+                                    <div class="nk-gap-3 mb-9"></div>
+
+                                    <h2 class="h3">Credits</h2>
+                                    <h4>Videos:</h4>
+                                    <ul>
+                                        <li><a href="http://mazwai.com/#/grid/videos/180">http://mazwai.com/#/grid/videos/180</a></li>
+                                        <li><a href="https://vimeo.com/192190817">https://vimeo.com/192190817</a></li>
+                                        <li><a href="http://mazwai.com/#/grid/videos/105">http://mazwai.com/#/grid/videos/105</a></li>
+                                    </ul>
+
+                                    <h4>Plugins:</h4>
+                                    <ul>
+                                        <li><code>jQuery</code> - <a href="https://github.com/jquery/jquery">https://github.com/jquery/jquery</a></li>
+                                        <li><code>Bootstrap</code> - <a href="https://github.com/twbs/bootstrap/tree/v4-dev">https://github.com/twbs/bootstrap/tree/v4-dev</a></li>
+                                        <li><code>GSAP</code> - <a href="https://github.com/greensock/GreenSock-JS">https://github.com/greensock/GreenSock-JS</a></li>
+                                        <li><code>jQuery Validation</code> - <a href="https://github.com/jzaefferer/jquery-validation">https://github.com/jzaefferer/jquery-validation</a></li>
+                                        <li><code>jQuery Form</code> - <a href="https://github.com/malsup/form">https://github.com/malsup/form</a></li>
+                                        <li><code>Hammer.js</code> - <a href="https://github.com/hammerjs/hammer.js">https://github.com/hammerjs/hammer.js</a></li>
+                                        <li><code>nanoScrollerJS</code> - <a href="https://github.com/jamesflorentino/nanoScrollerJS">https://github.com/jamesflorentino/nanoScrollerJS</a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Right Info -->
+        <div class="nk-layout">
+            <div class="nk-layout-bottom-right-rotated">
+
+            </div>
+        </div>
+    </div>
+    <div class="nk-main-bg"></div>
+    <!-- END: Main Page Content -->
+
+    <!--
+        START: Blog
+
+        Additional Classes:
+            .active
+
+        Note:
+            If you don't want to show blog, just remove all content inside and remove .active class, but don't remove this block completely
+    -->
+    <div class="nk-blog" id="nk-blog">
+
+    </div>
+    <!-- END: Blog -->
+
+
+
+
+    <!-- START: Scripts -->
+
+    <!-- GSAP -->
+    <script src="assets/bower_components/gsap/src/minified/TweenMax.min.js"></script>
+    <script src="assets/bower_components/gsap/src/minified/plugins/ScrollToPlugin.min.js"></script>
+
+    <!-- History.js -->
+    <script src="assets/bower_components/history.js/scripts/bundled/html4%2Bhtml5/jquery.history.js"></script>
+
+    <!-- Bootstrap Custom -->
+    <script src="assets/js/bootstrap-custom.min.js"></script>
+
+    <!-- Jquery Form -->
+    <script src="assets/bower_components/jquery-form/jquery.form.js"></script>
+
+    <!-- Jquery Validation -->
+    <script src="assets/bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+
+    <!-- Hammer.js -->
+    <script src="assets/bower_components/hammer.js/hammer.min.js"></script>
+
+    <!-- NanoSroller -->
+    <script src="assets/bower_components/nanoscroller/bin/javascripts/jquery.nanoscroller.min.js"></script>
+
+    <!-- Background Check Custom -->
+    <script src="assets/plugins/background-check/background-check.min.js"></script>
+
+    <!-- Jarallax Video -->
+    <script src="assets/bower_components/jarallax/dist/jarallax-video.min.js"></script>
+
+    <!-- Umbrella -->
+    <script src="assets/js/umbrella.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/umbrella-init.js"></script>
+    <!-- END: Scripts -->
+
+
+
+</body>
+
+</html>

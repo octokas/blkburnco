@@ -1,0 +1,97 @@
+/* Placeholders */
+::placeholder,
+.form-control::placeholder {
+    color: inherit;
+    opacity: 1;
+    transition: .2s opacity;
+}
+:focus::placeholder,
+.form-control:focus::placeholder {
+    opacity: 0.5;
+}
+
+
+/* Buttons */
+.nk-form-btn {
+    display: inline-block;
+    background: none;
+    border: none;
+    font-weight: bold;
+    padding: 0;
+    transform: rotate(90deg);
+    transform-origin: 0 100%;
+    line-height: 1;
+    margin-top: 22px;
+    transition: .2s transform;
+
+    &:focus,
+    &:active {
+        outline: none;
+    }
+
+    &:hover,
+    &.hover {
+        transform: rotate(90deg) translateX(-5px);
+    }
+}
+
+/* From Controls */
+.form-control {
+    padding: 16px 0;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.2;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid #404040;
+    transition: .2s border, .2s color;
+    background: none;
+    color: inherit;
+
+    & + & {
+        margin-top: 9px;
+    }
+
+    &:focus,
+    &.focus,
+    &:active {
+        color: inherit;
+        background: none;
+        border-bottom: 1px solid #848484;
+    }
+}
+select.form-control {
+    padding: 6px 20px;
+}
+.nk-input-group-btn {
+    display: table-cell;
+    position: relative;
+    white-space: nowrap;
+    vertical-align: middle;
+    width: 1%;
+}
+
+/* Validation */
+div.nk-error {
+    font-weight: normal;
+    background-color: transparent;
+    color: $color_danger;
+    padding: 0;
+    margin: 5px 0;
+    z-index: 1;
+}
+.form-control.nk-error,
+.nk-form-style-1 .form-control.nk-error {
+    border-bottom: 1px solid $color_danger;
+}
+
+.nk-form-response-success {
+    display: none;
+    color: $color_success;
+    margin-bottom: 10px;
+}
+.nk-form-response-error {
+    display: none;
+    color: $color_danger;
+    margin-bottom: 10px;
+}

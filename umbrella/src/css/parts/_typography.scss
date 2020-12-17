@@ -1,0 +1,106 @@
+html {
+    font-size: $html_font_size;
+}
+
+body {
+    font-family: $font_body;
+    line-height: $body_line_height;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+p,
+blockquote,
+ul,
+ol {
+    margin-bottom: 30px;
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+/* headings */
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    font-family: $font_headings;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: $headings_line_height;
+}
+h1, .h1 {
+    font-size: 30px;
+}
+h2, .h2 {
+    font-size: 25px;
+}
+h3, .h3 {
+    font-size: 22px;
+}
+h4, .h4 {
+    font-size: 20px;
+}
+h5, .h5 {
+    font-size: 18px;
+}
+h6, .h6 {
+    font-size: 16px;
+}
+.display-1,
+.display-2,
+.display-3,
+.display-4 {
+    font-family: $font_headings;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: $display_headings_line_height;
+}
+.display-1 {
+    font-size: 55px;
+}
+.display-2 {
+    font-size: 45px;
+}
+.display-3 {
+    font-size: 40px;
+}
+.display-4 {
+    font-size: 35px;
+}
+
+@media #{$media_smaller_md} {
+    h1, .h1 {
+        font-size: 28px;
+    }
+    h2, .h2 {
+        font-size: 23px;
+    }
+    h3, .h3 {
+        font-size: 20px;
+    }
+    h4, .h4 {
+        font-size: 18px;
+    }
+    h5, .h5 {
+        font-size: 16px;
+    }
+    h6, .h6 {
+        font-size: 14px;
+    }
+    .display-1 {
+        font-size: 45px;
+    }
+    .display-2 {
+        font-size: 38px;
+    }
+    .display-3 {
+        font-size: 34px;
+    }
+    .display-4 {
+        font-size: 30px;
+    }
+}
